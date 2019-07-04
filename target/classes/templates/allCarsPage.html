@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div th:insert="fragments :: mainNavbar"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>List of cars</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Engine</th>
+                    <th>HorsePower</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="carList: ${allCars}">
+                    <td th:text="${carList.make}"></td>
+                    <td th:text="${carList.model}"></td>
+                    <td th:text="${carList.engine}"></td>
+                    <td th:text="${carList.horsePower}"></td>
+                    <td>
+                        <form action="#" th:action="@{'/deleteCarAction/{id}'(id=${carList.id})}" th:method="delete">
+                            <input type="hidden" name="_method" value="delete"/>
+                            <input type="submit" class="btn-danger" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container">
+            <h2>Add new carList</h2>
+
+            <form action="#" th:action="@{/addCarAction}" th:object="${newCar}" th:method="post">
+                <div class="form-group">
+
+                    <label for="carMake">Make</label>
+                    <input id="carMake" type="text" th:field="${newCar.make}"/>
+
+                    <label for="carModel">Model</label>
+                    <input id="carModel" type="text" th:field="${newCar.model}"/>
+
+                    <label for="carEngine">Engine</label>
+                    <input id="carEngine" type="text" th:field="${newCar.engine}"/>
+
+                    <label for="carPower">HorsePower</label>
+                    <input id="carPower" type="text" th:field="${newCar.horsePower}"/>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add" class="btn-primary"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

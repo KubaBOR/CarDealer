@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Config</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div th:insert="fragments :: mainNavbar"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>List of configuration options</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Config</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="configurations: ${allConfig}">
+                    <td th:text="${configurations.addon}"></td>
+                    <td>
+                        <form action="#" th:action="@{'/deleteAddonAction/{id}'(id=${configurations.id})}" th:method="delete">
+                            <input type="hidden" name="_method" value="delete"/>
+                            <input type="submit" class="btn-danger" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container">
+            <h2>Add new addon</h2>
+
+            <form action="#" th:action="@{/addConfigAction}" th:object="${newConfig}" th:method="post">
+                <div class="form-group">
+
+                    <label for="configName">Addon</label>
+                    <input id="configName" type="text" th:field="${newConfig.addon}"/>
+
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add" class="btn-primary"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

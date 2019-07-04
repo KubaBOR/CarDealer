@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Auction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div th:insert="fragments :: mainNavbar"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Auctioned Cars
+                <span>
+            <a href="/addNewAuctionPage">
+            <button class="btn-primary">Add New</button>
+            </a>
+        </span>
+            </h2>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>All Auctions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="auction: ${allAuctions}" style="border: 1px black">
+                    <td th:text="${auction.title}"></td>
+                    <td th:text="${auction.price}"></td>
+                    <td th:text="${auction.productionYear}"></td>
+                    <td>
+                        <div th:each="carList: ${auction.carList}">
+                            <span th:text="${carList.model}"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="configurations: ${auction.configurationList}">
+                            <span th:text="${configurations.addon}"></span>
+                        </div>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
