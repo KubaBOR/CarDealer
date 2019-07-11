@@ -10,18 +10,20 @@ public class Auction {
 
     private String id;
     private String title;
-    private List<Car> carList;
+    private Car car;
     private List<Configuration> configurationList;
     private int price;
     private String productionYear;
 
-    public Auction(String title, int price, String productionYear) {
+/*
+    public Auction(String title, int price, String productionYear, Car car) {
         this.title = title;
-        this.carList = new ArrayList<>();
+        this.car = car;
         this.configurationList = new ArrayList<>();
         this.price = price;
         this.productionYear = productionYear;
     }
+*/
 
     public Auction() {}
 
@@ -41,12 +43,12 @@ public class Auction {
         this.title = title;
     }
 
-    public List<Car> getCarList() {
-        return carList;
+    public Car getCar() {
+        return car;
     }
 
-    public void setCarList(List<Car> carList) {
-        this.carList = carList;
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     public List<Configuration> getConfigurationList() {

@@ -27,13 +27,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="carList: ${allCars}">
-                    <td th:text="${carList.make}"></td>
-                    <td th:text="${carList.model}"></td>
-                    <td th:text="${carList.engine}"></td>
-                    <td th:text="${carList.horsePower}"></td>
+                <tr th:each="car: ${allCars}">
+                    <td th:text="${car.make}"></td>
+                    <td th:text="${car.model}"></td>
+                    <td th:text="${car.engine}"></td>
+                    <td th:text="${car.horsePower}"></td>
                     <td>
-                        <form action="#" th:action="@{'/deleteCarAction/{id}'(id=${carList.id})}" th:method="delete">
+                        <form action="#" th:action="@{'/deleteCarAction/{id}'(id=${car.id})}" th:method="delete">
                             <input type="hidden" name="_method" value="delete"/>
                             <input type="submit" class="btn-danger" value="Delete">
                         </form>
@@ -44,7 +44,7 @@
         </div>
 
         <div class="container">
-            <h2>Add new carList</h2>
+            <h2>Add new car</h2>
 
             <form action="#" th:action="@{/addCarAction}" th:object="${newCar}" th:method="post">
                 <div class="form-group">

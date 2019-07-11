@@ -38,25 +38,10 @@ public class AuctionService {
     }
 
     public String createNewAuction (AuctionController.NewAuctionCarFormData auction){
-
+        modelMapper.getConfiguration().setAmbiguityIgnored(true);
         AuctionDocument auctionDocument = modelMapper.map(auction, AuctionDocument.class);
-
         return auctionRepository.save(auctionDocument).getId();
     }
-
-/*    @PostConstruct
-    void init(){
-        Auction auction1 = new Auction("Super Audi!!", 74000, "2014");
-        AuctionDocument auctionDocument = modelMapper.map(auction1, AuctionDocument.class);
-
-        List<CarDocument> allCars = carRepository.findAll();
-        List<ConfigurationDocument> allConfig = configurationRepository.findAll();
-
-        auctionDocument.setCarList(allCars);
-        auctionDocument.setConfigurationList(allConfig);
-
-        auctionRepository.save(auctionDocument);
-    }*/
 
     public List<Auction> getAllAuctions(){
         List<AuctionDocument> allAuctions = auctionRepository.findAll();

@@ -39,7 +39,8 @@ public class AuctionController {
 
     @GetMapping("/addNewAuctionPage")
     public String addNewAuctionPage(Model model) {
-        model.addAttribute("allAuctions", carService.getAllCars());
+        model.addAttribute("displayAuctions", auctionService.getAllAuctions());
+        model.addAttribute("allCars", carService.getAllCars());
         model.addAttribute("allConfig", configurationService.getAllConfigurations());
         model.addAttribute("newAuction", new NewAuctionCarFormData());
         return "addNewAuctionPage";
@@ -50,8 +51,8 @@ public class AuctionController {
     Bug - This method creates empty record
      */
     @PostMapping("/addNewAuctionCarAction")
-    public RedirectView addNewAuctionCarAction(@ModelAttribute("newAuction") NewAuctionCarFormData auction, Model model) {
-        auctionService.createNewAuction(auction);
+    public RedirectView addNewAuctionCarAction(@ModelAttribute("newAuction") NewAuctionCarFormData newAuction, Model model) {
+        auctionService.createNewAuction(newAuction);
         RedirectView redirectView = new RedirectView();
         redirectView.setUrl("/allAuctionsPage");
         return redirectView;
@@ -59,24 +60,13 @@ public class AuctionController {
 
     public static class NewAuctionCarFormData {
         private String title;
-        private String[] carList;
-        private String[] config;
+        private String carId;
+        private String configId;
         private String price;
         private String productionYear;
 
-
-
-        public NewAuctionCarFormData(String title, String[] carList, String[] config, String price, String productionYear) {
-            this.title = title;
-            this.carList = carList;
-            this.config = config;
-            this.price = price;
-            this.productionYear = productionYear;
-        }
-
         public NewAuctionCarFormData() {
         }
-
 
         public String getTitle() {
             return title;
@@ -86,20 +76,20 @@ public class AuctionController {
             this.title = title;
         }
 
-        public String[] getCarList() {
-            return carList;
+        public String getCarId() {
+            return carId;
         }
 
-        public void setCarList(String[] carList) {
-            this.carList = carList;
+        public void setCarId(String carId) {
+            this.carId = carId;
         }
 
-        public String[] getConfig() {
-            return config;
+        public String getConfigId() {
+            return configId;
         }
 
-        public void setConfig(String[] config) {
-            this.config = config;
+        public void setConfigId(String configId) {
+            this.configId = configId;
         }
 
         public String getPrice() {

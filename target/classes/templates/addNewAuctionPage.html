@@ -16,38 +16,24 @@
     <form action="#" th:action="@{/addNewAuctionCarAction}" th:object="${newAuction}" th:method="post">
         <div class="form-group">
 
-                <label for="auctionTitle">Auction Title</label>
-                <input id="auctionTitle" type="text" th:field="*{title}">
-                <br>
-                <label for="auctionPrice">Price in PLN</label>
-                <input id="auctionPrice" type="number" th:field="${newAuction.price}">
+            <label for="auctionTitle">Auction Title</label>
+            <input id="auctionTitle" type="text" th:field="${newAuction.title}">
+            <br>
+            <label for="auctionPrice">Price in PLN</label>
+            <input id="auctionPrice" type="number" th:field="${newAuction.price}">
+            <br>
+            <label for="carYear">Production Year</label>
+            <input id="carYear" type="text" th:field="${newAuction.productionYear}">
 
+            <div th:each="car: ${allCars}">
+                <input type="radio"
+                       id="chosenCar"
+                       th:field="${newAuction.carId}"
+                       th:value="${newAuction.carId}"
+                       th:text="${car.make} + ' ' + ${car.model}">
+            </div>
 
-<!--            <fieldset>
-                <legend>Select carList</legend>
-            <select name="cars" th:field="${newAuction.carList}" multiple style="width: 100%;">
-                <option th:each="carList ${allAuctions}" th:text="${carList.make}" th:value="${carList.name}"></option>
-            </select>
-            </fieldset>-->
-
-                <legend>Select car</legend>
-                <div th:each="carList: ${allAuctions}">
-                    <input type="radio"
-                           id="chosenCar"
-                           th:field="${newAuction.carList}"
-                           th:value="${carList.model}"
-                           th:text="${carList.model}">
-                </div>
-
-                <legend>Select configuration</legend>
-                <div th:each="configurations: ${allConfig}">
-                    <input type="checkbox"
-                           id="chosenConfig"
-                           th:field="${newAuction.config}"
-                           th:value="${configurations.addon}"
-                           th:text="${configurations.addon}">
-                </div>
-            <input type="submit" class="btn-success">
+            <input type="submit" class="btn btn-success">
             </fieldset>
         </div>
     </form>

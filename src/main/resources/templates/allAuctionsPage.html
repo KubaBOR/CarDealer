@@ -18,7 +18,7 @@
             <h2>Auctioned Cars
                 <span>
             <a href="/addNewAuctionPage">
-            <button class="btn-primary">Add New</button>
+            <button class="btn btn-primary">Add New</button>
             </a>
         </span>
             </h2>
@@ -26,7 +26,10 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>All Auctions</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Production Year</th>
+                    <th>Car</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -34,19 +37,7 @@
                     <td th:text="${auction.title}"></td>
                     <td th:text="${auction.price}"></td>
                     <td th:text="${auction.productionYear}"></td>
-                    <td>
-                        <div th:each="carList: ${auction.carList}">
-                            <span th:text="${carList.model}"></span>
-                        </div>
-                    </td>
-                    <td>
-                        <div th:each="configurations: ${auction.configurationList}">
-                            <span th:text="${configurations.addon}"></span>
-                        </div>
-                    </td>
-                    <td>
-
-                    </td>
+                    <td th:text="${auction.car}"></td>
                 </tr>
                 </tbody>
             </table>

@@ -12,40 +12,62 @@ public class AuctionDocument {
     @Id
     private String id;
     private String title;
-    private List<CarDocument> carList;
-    private List<ConfigurationDocument> configurationList;
+    private CarDocument car;
+    private String configurationId;
     private int price;
     private String productionYear;
 
     public AuctionDocument() { }
 
-    public AuctionDocument(String id, String title, List<CarDocument> carList, List<ConfigurationDocument> configurationList, int price, String productionYear) {
-        this.id = id;
-        this.title = title;
-        this.carList = carList;
-        this.configurationList = configurationList;
-        this.price = price;
-        this.productionYear = productionYear;
-    }
+
 
     public String getId() {
         return id;
     }
 
-    public List<CarDocument> getCarList() {
-        return carList;
+
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setCarList(List<CarDocument> carList) {
-        this.carList = carList;
+    public String getTitle() {
+        return title;
     }
 
-    public List<ConfigurationDocument> getConfigurationList() {
-        return configurationList;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setConfigurationList(List<ConfigurationDocument> configurationList) {
-        this.configurationList = configurationList;
+    public CarDocument getCar() {
+        return car;
+    }
+
+    public void setCar(CarDocument car) {
+        this.car = car;
+    }
+
+    public String getConfigurationId() {
+        return configurationId;
+    }
+
+    public void setConfigurationId(String configurationId) {
+        this.configurationId = configurationId;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getProductionYear() {
+        return productionYear;
+    }
+
+    public void setProductionYear(String productionYear) {
+        this.productionYear = productionYear;
     }
 
     @Override
@@ -53,8 +75,8 @@ public class AuctionDocument {
         return "AuctionDocument{" +
                 "id='" + id + '\'' +
                 ", title='" + title + '\'' +
-                ", carList=" + carList +
-                ", configurationList=" + configurationList +
+                ", car=" + car +
+                ", configurationId='" + configurationId + '\'' +
                 ", price=" + price +
                 ", productionYear='" + productionYear + '\'' +
                 '}';
