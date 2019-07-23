@@ -1,7 +1,7 @@
 package com.carDealer.carDealer.cars.dto;
 
 public class Car {
-    private String id;
+//    private String id;
     private String make;
     private String model;
     private String engine;
@@ -16,13 +16,13 @@ public class Car {
         this.horsePower = horsePower;
     }
 
-    public String getId() {
+   /* public String getId() {
         return id;
     }
 
     public void setId(String id) {
         this.id = id;
-    }
+    }*/
 
     public String getMake() {
         return make;

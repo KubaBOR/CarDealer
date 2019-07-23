@@ -3,7 +3,6 @@ package com.carDealer.carDealer.auction.dto;
 import com.carDealer.carDealer.cars.dto.Car;
 import com.carDealer.carDealer.configuration.dto.Configuration;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Auction {
@@ -15,15 +14,13 @@ public class Auction {
     private int price;
     private String productionYear;
 
-/*
-    public Auction(String title, int price, String productionYear, Car car) {
+    /*public Auction(String title, int price, String productionYear, Car car) {
         this.title = title;
         this.car = car;
         this.configurationList = new ArrayList<>();
         this.price = price;
         this.productionYear = productionYear;
-    }
-*/
+    }*/
 
     public Auction() {}
 

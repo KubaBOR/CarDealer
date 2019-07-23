@@ -1,3 +1,4 @@
+/*
 package com.carDealer.carDealer.cars.service;
 
 import com.carDealer.carDealer.cars.dto.Car;
@@ -52,3 +53,4 @@ public class CarService {
                 .collect(Collectors.toList());
     }
 }
+*/

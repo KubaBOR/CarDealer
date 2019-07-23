@@ -1,7 +1,7 @@
 package com.carDealer.carDealer.auction.model;
 
-import com.carDealer.carDealer.cars.model.CarDocument;
-import com.carDealer.carDealer.configuration.model.ConfigurationDocument;
+import com.carDealer.carDealer.cars.dto.Car;
+import com.carDealer.carDealer.configuration.dto.Configuration;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,19 +12,16 @@ public class AuctionDocument {
     @Id
     private String id;
     private String title;
-    private CarDocument car;
-    private String configurationId;
+    private Car car;
+    private List<Configuration> configurationList;
     private int price;
     private String productionYear;
 
     public AuctionDocument() { }
 
-
-
     public String getId() {
         return id;
     }
-
 
     public void setId(String id) {
         this.id = id;
@@ -38,20 +35,20 @@ public class AuctionDocument {
         this.title = title;
     }
 
-    public CarDocument getCar() {
+    public Car getCar() {
         return car;
     }
 
-    public void setCar(CarDocument car) {
+    public void setCar(Car car) {
         this.car = car;
     }
 
-    public String getConfigurationId() {
-        return configurationId;
+    public List<Configuration> getConfigurationList() {
+        return configurationList;
     }
 
-    public void setConfigurationId(String configurationId) {
-        this.configurationId = configurationId;
+    public void setConfigurationList(List<Configuration> configurationList) {
+        this.configurationList = configurationList;
     }
 
     public int getPrice() {
@@ -68,18 +65,6 @@ public class AuctionDocument {
 
     public void setProductionYear(String productionYear) {
         this.productionYear = productionYear;
-    }
-
-    @Override
-    public String toString() {
-        return "AuctionDocument{" +
-                "id='" + id + '\'' +
-                ", title='" + title + '\'' +
-                ", car=" + car +
-                ", configurationId='" + configurationId + '\'' +
-                ", price=" + price +
-                ", productionYear='" + productionYear + '\'' +
-                '}';
     }
 }
 

@@ -1,6 +1,8 @@
+/*
 package com.carDealer.carDealer.cars.controller;
 
 import com.carDealer.carDealer.cars.dto.Car;
+import com.carDealer.carDealer.cars.model.CarDocument;
 import com.carDealer.carDealer.cars.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +27,12 @@ public class  CarController {
         setupModel(model);
         return "allCarsPage";
     }
+
+    @GetMapping("/getCarById/{id}")
+    public Car getCarById(@PathVariable String id) {
+        return carService.getCarById(id);
+    }
+
     @PostMapping("/addCarAction")
     public RedirectView addNewCar(@ModelAttribute("newCar") Car car, Model model){
         carService.saveCar(car);
@@ -48,3 +56,4 @@ public class  CarController {
         model.addAttribute("deleteCarId", "");
     }
 }
+*/

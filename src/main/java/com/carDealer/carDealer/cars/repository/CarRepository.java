@@ -1,3 +1,4 @@
+/*
 package com.carDealer.carDealer.cars.repository;
 
 import com.carDealer.carDealer.cars.model.CarDocument;
@@ -9,3 +10,4 @@ public interface CarRepository extends MongoRepository<CarDocument, String> {
 
     CarDocument getByMake(String make);
 }
+*/

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new auction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-light">
+    <div th:insert="fragments :: mainNavbar"></div>
+</nav>
+<div class="row align-items-center">
+    <div class="col-lg-4"></div>
+
+    <div class="col-lg-4">
+
+        <h3>Add new auction</h3>
+        <form action="#" th:action="@{/addAuction}" th:object="${addNewAuction}" th:method="post">
+            <div class="form-group">
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Auction Title</span>
+                    </div>
+                    <input id="auctionTitle" type="text" th:field="${addNewAuction.title}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
+                    </div>
+                    <input id="auctionPrice" type="number" th:field="${addNewAuction.price}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <div class="input-group-append">
+                        <span class="input-group-text">PLN</span>
+                    </div>
+                </div>
+
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Production Year</span>
+                    </div>
+                    <input id="carYear" type="text" th:field="${addNewAuction.productionYear}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Make</span>
+                    </div>
+                    <input id="carMake" type="text" th:field="${addNewAuction.car.make}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Model</span>
+                    </div>
+                    <input id="carModel" type="text" th:field="${addNewAuction.car.model}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Engine</span>
+                    </div>
+                    <input id="carEngine" type="text" th:field="${addNewAuction.car.engine}" placeholder="Capacity, Fuel Type" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Horse Power</span>
+                    </div>
+                    <input id="carPower" type="text" th:field="${addNewAuction.car.horsePower}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+                <input type="submit" class="btn btn-success">
+                </fieldset>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-lg-4"></div>
+
+</div>
+</body>
+</html>

@@ -4,8 +4,6 @@ import com.carDealer.carDealer.auction.controller.AuctionController;
 import com.carDealer.carDealer.auction.dto.Auction;
 import com.carDealer.carDealer.auction.model.AuctionDocument;
 import com.carDealer.carDealer.auction.repository.AuctionRepository;
-import com.carDealer.carDealer.cars.repository.CarRepository;
-import com.carDealer.carDealer.cars.service.CarService;
 import com.carDealer.carDealer.configuration.repository.ConfigurationRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -15,30 +13,33 @@ import java.util.stream.Collectors;
 @Service
 public class AuctionService {
 
-    private CarService carService;
+//    private CarService carService;
 
     private AuctionRepository auctionRepository;
 
-    private CarRepository carRepository;
+//    private CarRepository carRepository;
 
     private ConfigurationRepository configurationRepository;
 
     private ModelMapper modelMapper;
 
-    public AuctionService(CarService carService,
+    public AuctionService(
                           AuctionRepository auctionRepository,
-                          CarRepository carRepository,
                           ConfigurationRepository configurationRepository,
                           ModelMapper modelMapper) {
-        this.carService = carService;
         this.auctionRepository = auctionRepository;
-        this.carRepository = carRepository;
         this.configurationRepository = configurationRepository;
         this.modelMapper = modelMapper;
     }
 
-    public String createNewAuction (AuctionController.NewAuctionCarFormData auction){
+    /*public String createNewAuction (AuctionController.NewAuctionCarFormData auction){
         modelMapper.getConfiguration().setAmbiguityIgnored(true);
+        AuctionDocument auctionDocument = modelMapper.map(auction, AuctionDocument.class);
+
+        return auctionRepository.save(auctionDocument).getId();
+    }*/
+
+    public String createAuction(Auction auction){
         AuctionDocument auctionDocument = modelMapper.map(auction, AuctionDocument.class);
         return auctionRepository.save(auctionDocument).getId();
     }

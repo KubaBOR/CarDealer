@@ -25,13 +25,25 @@
             <label for="carYear">Production Year</label>
             <input id="carYear" type="text" th:field="${newAuction.productionYear}">
 
-            <div th:each="car: ${allCars}">
+            <!--<div th:each="car: ${allCars}">
                 <input type="radio"
                        id="chosenCar"
                        th:field="${newAuction.carId}"
                        th:value="${newAuction.carId}"
                        th:text="${car.make} + ' ' + ${car.model}">
-            </div>
+            </div>-->
+            <label for="carMake">Make</label>
+            <input id="carMake" type="text" th:field="${newAuction.car.make}"/>
+
+            <label for="carModel">Model</label>
+            <input id="carModel" type="text" th:field="${newAuction.car.model}"/>
+
+            <label for="carEngine">Engine</label>
+            <input id="carEngine" type="text" th:field="${newAuction.car.engine}"/>
+
+            <label for="carPower">HorsePower</label>
+            <input id="carPower" type="text" th:field="${newAuction.car.horsePower}"/>
+
 
             <input type="submit" class="btn btn-success">
             </fieldset>

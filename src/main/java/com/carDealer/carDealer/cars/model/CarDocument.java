@@ -1,3 +1,4 @@
+/*
 package com.carDealer.carDealer.cars.model;
 
 import org.springframework.data.annotation.Id;
@@ -75,3 +76,4 @@ public class CarDocument {
                 '}';
     }
 }
+*/
