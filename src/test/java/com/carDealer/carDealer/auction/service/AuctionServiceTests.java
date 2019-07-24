@@ -33,7 +33,7 @@ public class AuctionServiceTests {
     @MockBean
     ConfigurationService configurationService;
 
-    @Test
+   /* @Test
     public void created_auction_car_details_are_correct() {
 
         Auction auction = new Auction();
@@ -51,5 +51,5 @@ public class AuctionServiceTests {
         Assert.assertEquals("Fabia", auction.getCar().getModel());
         Assert.assertEquals(85, auction.getCar().getHorsePower());
 
-    }
+    }*/
 }

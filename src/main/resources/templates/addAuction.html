@@ -33,14 +33,16 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Auction Title</span>
                     </div>
-                    <input id="auctionTitle" type="text" th:field="${addNewAuction.title}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <input id="auctionTitle" type="text" th:field="${addNewAuction.title}" class="form-control"
+                           aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                 </div>
 
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
                     </div>
-                    <input id="auctionPrice" type="number" th:field="${addNewAuction.price}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <input id="auctionPrice" type="number" th:field="${addNewAuction.price}" class="form-control"
+                           aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                     <div class="input-group-append">
                         <span class="input-group-text">PLN</span>
                     </div>
@@ -51,36 +53,60 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Production Year</span>
                     </div>
-                    <input id="carYear" type="text" th:field="${addNewAuction.productionYear}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <input id="carYear" type="text" th:field="${addNewAuction.productionYear}" class="form-control"
+                           aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                 </div>
 
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Make</span>
                     </div>
-                    <input id="carMake" type="text" th:field="${addNewAuction.car.make}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <select th:field="${addNewAuction.car.carMake}" name="carMake" class="custom-select">
+                        <option th:each="makeOpt : ${T(com.carDealer.carDealer.cars.dto.CarMake).values()}"
+                                th:value="${{makeOpt}}"
+                                th:text="${makeOpt.displayValue}">
+                        </option>
+                    </select>
+                    <!--<input id="carMake" type="text" th:field="${addNewAuction.car.make}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">-->
                 </div>
 
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Model</span>
                     </div>
-                    <input id="carModel" type="text" th:field="${addNewAuction.car.model}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <input id="carModel" type="text" th:field="${addNewAuction.car.model}" class="form-control"
+                           aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                 </div>
 
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Engine</span>
                     </div>
-                    <input id="carEngine" type="text" th:field="${addNewAuction.car.engine}" placeholder="Capacity, Fuel Type" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <input id="carEngine" type="text" th:field="${addNewAuction.car.engine}"
+                           placeholder="Capacity, Fuel Type" class="form-control" aria-label="Small"
+                           aria-describedby="inputGroup-sizing-sm">
                 </div>
 
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Horse Power</span>
                     </div>
-                    <input id="carPower" type="text" th:field="${addNewAuction.car.horsePower}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <input id="carPower" type="text" th:field="${addNewAuction.car.horsePower}" class="form-control"
+                           aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                 </div>
+
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Color</span>
+                    </div>
+                    <select th:field="${addNewAuction.car.color}" class="custom-select" id="inputGroupSelect02" name="color">
+                        <option th:each="colorOpt : ${T(com.carDealer.carDealer.cars.dto.Color).values()}"
+                                th:value="${colorOpt}" th:text="${colorOpt}"></option>
+                    </select>
+                </div>
+
+
 
                 <input type="submit" class="btn btn-success">
                 </fieldset>

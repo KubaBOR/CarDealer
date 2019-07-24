@@ -29,7 +29,8 @@
                     <th>Price</th>
                     <th>Production Year</th>
                     <th>Car</th>
-                    <th>Details</th>
+                    <th>Engine</th>
+                    <th>Color</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,9 +38,10 @@
                     <td th:text="${auction.title}"></td>
                     <td th:text="${auction.price}"></td>
                     <td th:text="${auction.productionYear}"></td>
-                    <td th:text="${auction.car.make + ' '
+                    <td th:text="${auction.car.carMake + ' '
                     + auction.car.model}"/>
                     <td th:text="${auction.car.engine + ', ' + auction.car.horsePower + ' HP'}"></td>
+                    <td th:text="${auction.car.color}"></td>
 
                 </tr>
                <!-- <td th:each="car : ${allCars}"
