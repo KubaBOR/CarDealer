@@ -5,6 +5,7 @@ public class NewAuctionFormData {
     private String description;
     private String car;
     private String[] configurations;
+    private int milleageKm;
     private int price;
     private String productionYear;
 
@@ -17,6 +18,14 @@ public class NewAuctionFormData {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getMilleageKm() {
+        return milleageKm;
+    }
+
+    public void setMilleageKm(int milleageKm) {
+        this.milleageKm = milleageKm;
     }
 
     public String getCar() {

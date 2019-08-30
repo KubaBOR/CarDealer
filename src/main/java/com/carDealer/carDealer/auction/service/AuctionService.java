@@ -65,6 +65,7 @@ public class AuctionService {
                 formData.getDescription(),
                 carToSave,
                 configToSave,
+                formData.getMilleageKm(),
                 formData.getPrice(),
                 formData.getProductionYear()
         );

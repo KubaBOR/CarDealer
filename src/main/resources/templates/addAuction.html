@@ -51,7 +51,15 @@
 
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Make</span>
+                        <span class="input-group-text">Milleage (in kilometers)</span>
+                    </div>
+                    <input id="carMilleage" type="text" th:field="${addNewAuction.milleageKm}" class="form-control"
+                           aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Car</span>
                     </div>
 
                     <select th:field="${addNewAuction.car}" name="make"

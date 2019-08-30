@@ -26,10 +26,11 @@
                 <thead>
                 <tr>
                     <th></th>
+                    <th>Car Details</th>
                     <th>Price (PLN)</th>
                     <th>Production Year</th>
-                    <th>Car Details</th>
                     <th>Configuration</th>
+                    <th>Milleage</th>
                     <th>Description</th>
                 </tr>
                 </thead>
@@ -40,9 +41,6 @@
                             <input type="submit" class="btn btn-danger" value="&#10005;">
                         </form>
                     </td>
-                    <td th:text="${auction.price}"></td>
-                    <td th:text="${auction.productionYear}"></td>
-<!--                    <td th:text="${auction.car}"></td>-->
                     <td>
                         <div th:each="car : ${auction.car}">
                             <span th:text="${car.make}"></span>
@@ -51,11 +49,14 @@
                             <span th:text="${car.horsePower + ' hp'}"></span>
                         </div>
                     </td>
+                    <td th:text="${auction.price}"></td>
+                    <td th:text="${auction.productionYear}"></td>
                     <td>
                         <div th:each="config : ${auction.configurations}">
                             <span th:text="${config.addon}"></span>
                         </div>
                     </td>
+                    <td th:text="${auction.milleageKm + ' KM'}"></td>
                     <td th:text="${auction.description}"></td>
 
                     <!-- <td th:text="${auction.car.carMake + ' '

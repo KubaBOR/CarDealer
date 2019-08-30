@@ -17,10 +17,20 @@ public class AuctionDocument {
     private CarDocument car;
 
     private List<ConfigurationDocument> configurations;
+    private int milleageKm;
     private int price;
     private String productionYear;
 
     public AuctionDocument() { }
+
+    public AuctionDocument(String description, CarDocument car, List<ConfigurationDocument> configurations, int milleageKm, int price, String productionYear) {
+        this.description = description;
+        this.car = car;
+        this.configurations = configurations;
+        this.milleageKm = milleageKm;
+        this.price = price;
+        this.productionYear = productionYear;
+    }
 
     public AuctionDocument(String description, CarDocument car, List<ConfigurationDocument> configurations, int price, String productionYear) {
         this.description = description;
@@ -44,6 +54,14 @@ public class AuctionDocument {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getMilleageKm() {
+        return milleageKm;
+    }
+
+    public void setMilleageKm(int milleageKm) {
+        this.milleageKm = milleageKm;
     }
 
     public CarDocument getCar() {

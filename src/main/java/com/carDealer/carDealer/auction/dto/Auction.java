@@ -11,6 +11,7 @@ public class Auction {
     private String description;
     private Car car;
     private List<Configuration> configurations;
+    private int milleageKm;
 
     private int price;
     private String productionYear;
@@ -31,6 +32,14 @@ public class Auction {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getMilleageKm() {
+        return milleageKm;
+    }
+
+    public void setMilleageKm(int milleageKm) {
+        this.milleageKm = milleageKm;
     }
 
     public Car getCar() {

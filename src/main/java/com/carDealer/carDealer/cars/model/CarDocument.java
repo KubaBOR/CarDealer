@@ -15,7 +15,6 @@ public class CarDocument {
     private String model;
     private String engine;
     private int horsePower;
-    private List<CarDocument> carDocuments;
 
     public CarDocument() {
     }
@@ -66,6 +65,7 @@ public class CarDocument {
     public void setHorsePower(int horsePower) {
         this.horsePower = horsePower;
     }
+
 
     @Override
     public String toString() {

@@ -4,8 +4,6 @@ public class Car {
 
     private String id;
     private String make;
-    private CarMake carMake;
-    private Color color;
     private String model;
     private String engine;
     private int horsePower;
@@ -20,28 +18,12 @@ public class Car {
         this.id = id;
     }
 
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
     public String getMake() {
         return make;
     }
 
     public void setMake(String make) {
         this.make = make;
-    }
-
-    public CarMake getCarMake() {
-        return carMake;
-    }
-
-    public void setCarMake(CarMake carMake) {
-        this.carMake = carMake;
     }
 
     public String getModel() {
