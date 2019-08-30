@@ -1,7 +1,9 @@
 package com.carDealer.carDealer.auction.model;
 
 import com.carDealer.carDealer.cars.dto.Car;
+import com.carDealer.carDealer.cars.model.CarDocument;
 import com.carDealer.carDealer.configuration.dto.Configuration;
+import com.carDealer.carDealer.configuration.model.ConfigurationDocument;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,13 +13,22 @@ public class AuctionDocument {
 
     @Id
     private String id;
-    private String title;
-    private Car car;
-    private List<Configuration> configurationList;
+    private String description;
+    private CarDocument car;
+
+    private List<ConfigurationDocument> configurations;
     private int price;
     private String productionYear;
 
     public AuctionDocument() { }
+
+    public AuctionDocument(String description, CarDocument car, List<ConfigurationDocument> configurations, int price, String productionYear) {
+        this.description = description;
+        this.car = car;
+        this.configurations = configurations;
+        this.price = price;
+        this.productionYear = productionYear;
+    }
 
     public String getId() {
         return id;
@@ -27,28 +38,28 @@ public class AuctionDocument {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getDescription() {
+        return description;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Car getCar() {
+    public CarDocument getCar() {
         return car;
     }
 
-    public void setCar(Car car) {
+    public void setCar(CarDocument car) {
         this.car = car;
     }
 
-    public List<Configuration> getConfigurationList() {
-        return configurationList;
+    public List<ConfigurationDocument> getConfigurations() {
+        return configurations;
     }
 
-    public void setConfigurationList(List<Configuration> configurationList) {
-        this.configurationList = configurationList;
+    public void setConfigurations(List<ConfigurationDocument> configurations) {
+        this.configurations = configurations;
     }
 
     public int getPrice() {

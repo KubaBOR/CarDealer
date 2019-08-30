@@ -1,28 +1,14 @@
 package com.carDealer.carDealer.auction.dto;
 
-import com.carDealer.carDealer.cars.dto.Car;
-import com.carDealer.carDealer.configuration.dto.Configuration;
+public class NewAuctionFormData {
 
-import java.util.List;
-
-public class Auction {
-
-    private String id;
     private String description;
-    private Car car;
-    private List<Configuration> configurations;
-
+    private String car;
+    private String[] configurations;
     private int price;
     private String productionYear;
 
-    public Auction() {}
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public NewAuctionFormData() {
     }
 
     public String getDescription() {
@@ -33,19 +19,19 @@ public class Auction {
         this.description = description;
     }
 
-    public Car getCar() {
+    public String getCar() {
         return car;
     }
 
-    public void setCar(Car car) {
+    public void setCar(String car) {
         this.car = car;
     }
 
-    public List<Configuration> getConfigurations() {
+    public String[] getConfigurations() {
         return configurations;
     }
 
-    public void setConfigurations(List<Configuration> configurations) {
+    public void setConfigurations(String[] configurations) {
         this.configurations = configurations;
     }
 

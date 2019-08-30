@@ -1,7 +1,7 @@
-/*
 package com.carDealer.carDealer.cars.controller;
 
 import com.carDealer.carDealer.cars.dto.Car;
+import com.carDealer.carDealer.cars.dto.Make;
 import com.carDealer.carDealer.cars.model.CarDocument;
 import com.carDealer.carDealer.cars.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +54,8 @@ public class  CarController {
         model.addAttribute("allCars", allCars);
         model.addAttribute("newCar", new Car());
         model.addAttribute("deleteCarId", "");
+
+        List<Make> allMakes = carService.getAllMakes();
+        model.addAttribute("allMakes", allMakes);
     }
 }
-*/

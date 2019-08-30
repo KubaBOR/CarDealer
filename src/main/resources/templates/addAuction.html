@@ -31,14 +31,6 @@
 
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Auction Title</span>
-                    </div>
-                    <input id="auctionTitle" type="text" th:field="${addNewAuction.title}" class="form-control"
-                           aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                </div>
-
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
                     </div>
                     <input id="auctionPrice" type="number" th:field="${addNewAuction.price}" class="form-control"
@@ -61,42 +53,40 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Make</span>
                     </div>
-                    <select th:field="${addNewAuction.car.carMake}" name="carMake" class="custom-select">
-                        <option th:each="makeOpt : ${T(com.carDealer.carDealer.cars.dto.CarMake).values()}"
-                                th:value="${{makeOpt}}"
-                                th:text="${makeOpt.displayValue}">
+
+                    <select th:field="${addNewAuction.car}" name="make"
+                            class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                        <option th:each="car : ${allCars}"
+                                th:value="${car.id}"
+                                th:text="${car.make + ' '
+                                + car.model + ' '
+                                + car.engine + ' '
+                                + car.horsePower + ' hp'}">
+
                         </option>
                     </select>
-                    <!--<input id="carMake" type="text" th:field="${addNewAuction.car.make}" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">-->
+
                 </div>
 
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Model</span>
+                <div class="form-check">
+                    <h4>Select Configuration</h4>
+                    <div th:each="config : ${allConfig}" >
+
+                        <input type="checkbox"
+                               id="chosenConfig"
+                               th:field="${addNewAuction.configurations}"
+                               th:value="${config.id}"
+                               th:text="${config.addon}">
                     </div>
-                    <input id="carModel" type="text" th:field="${addNewAuction.car.model}" class="form-control"
-                           aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <br>
                 </div>
 
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Engine</span>
-                    </div>
-                    <input id="carEngine" type="text" th:field="${addNewAuction.car.engine}"
-                           placeholder="Capacity, Fuel Type" class="form-control" aria-label="Small"
-                           aria-describedby="inputGroup-sizing-sm">
+                <div class="form-group">
+                    <label for="auctionDescription">Description</label>
+                    <textarea class="form-control mx-sm-3" th:field="${addNewAuction.description}" id="auctionDescription" rows="10"></textarea>
                 </div>
 
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Horse Power</span>
-                    </div>
-                    <input id="carPower" type="text" th:field="${addNewAuction.car.horsePower}" class="form-control"
-                           aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                </div>
-
-
-                <div class="input-group input-group-sm mb-3">
+                <!--<div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Color</span>
                     </div>
@@ -104,10 +94,9 @@
                         <option th:each="colorOpt : ${T(com.carDealer.carDealer.cars.dto.Color).values()}"
                                 th:value="${colorOpt}" th:text="${colorOpt}"></option>
                     </select>
-                </div>
+                </div>-->
 
-
-
+                <br>
                 <input type="submit" class="btn btn-success">
                 </fieldset>
             </div>

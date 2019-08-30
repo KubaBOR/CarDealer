@@ -1,8 +1,9 @@
-/*
 package com.carDealer.carDealer.cars.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
 
 @Document(collection = "cars")
 public class CarDocument {
@@ -14,6 +15,7 @@ public class CarDocument {
     private String model;
     private String engine;
     private int horsePower;
+    private List<CarDocument> carDocuments;
 
     public CarDocument() {
     }
@@ -76,4 +78,3 @@ public class CarDocument {
                 '}';
     }
 }
-*/

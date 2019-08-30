@@ -25,21 +25,43 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Price</th>
+                    <th></th>
+                    <th>Price (PLN)</th>
                     <th>Production Year</th>
-                    <th>Car</th>
-                    <th>Details</th>
+                    <th>Car Details</th>
+                    <th>Configuration</th>
+                    <th>Description</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="auction: ${allAuctions}" style="border: 1px black">
-                    <td th:text="${auction.title}"></td>
+                    <td>
+                        <form action="#" th:action="@{'deleteAuctionAction/{id}'(id=${auction.id})}" th:method="delete">
+                            <input type="submit" class="btn btn-danger" value="&#10005;">
+                        </form>
+                    </td>
                     <td th:text="${auction.price}"></td>
                     <td th:text="${auction.productionYear}"></td>
-                    <td th:text="${auction.car.make + ' '
-                    + auction.car.model}"/>
-                    <td th:text="${auction.car.engine + ', ' + auction.car.horsePower + ' HP'}"></td>
+<!--                    <td th:text="${auction.car}"></td>-->
+                    <td>
+                        <div th:each="car : ${auction.car}">
+                            <span th:text="${car.make}"></span>
+                            <span th:text="${car.model}"></span>
+                            <span th:text="${car.engine}"></span>
+                            <span th:text="${car.horsePower + ' hp'}"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="config : ${auction.configurations}">
+                            <span th:text="${config.addon}"></span>
+                        </div>
+                    </td>
+                    <td th:text="${auction.description}"></td>
+
+                    <!-- <td th:text="${auction.car.carMake + ' '
+                     + auction.car.model}"/>
+                     <td th:text="${auction.car.engine + ', ' + auction.car.horsePower + ' HP'}"></td>
+                     <td th:text="${auction.car.color}"></td>-->
 
                 </tr>
                <!-- <td th:each="car : ${allCars}"
