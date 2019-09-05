@@ -4,6 +4,7 @@ import com.carDealer.carDealer.auction.dto.Auction;
 import com.carDealer.carDealer.auction.dto.NewAuctionFormData;
 import com.carDealer.carDealer.auction.model.AuctionDocument;
 import com.carDealer.carDealer.auction.repository.AuctionRepository;
+import com.carDealer.carDealer.bid.dto.Bid;
 import com.carDealer.carDealer.cars.model.CarDocument;
 import com.carDealer.carDealer.cars.repository.CarRepository;
 import com.carDealer.carDealer.configuration.model.ConfigurationDocument;
@@ -11,8 +12,8 @@ import com.carDealer.carDealer.configuration.repository.ConfigurationRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.parser.Parser;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -45,6 +46,16 @@ public class AuctionService {
         return auctionToReturn;
     }
 
+    public Auction bidAuction(String auctionId, int amount) {
+        AuctionDocument getAuction = auctionRepository.getById(auctionId);
+        List<Bid> getBids = getAuction.getBiddingList();
+        getBids.add(new Bid(amount));
+        getAuction.setBiddingList(getBids);
+        auctionRepository.save(getAuction);
+
+        return modelMapper.map(getAuction, Auction.class);
+    }
+
     public String addNewAuction (NewAuctionFormData formData) {
 
         String carId = formData.getCar();
@@ -56,13 +67,18 @@ public class AuctionService {
                 .filter(configurationDocument -> configurationIds.contains(configurationDocument.getId()))
                 .collect(Collectors.toList());
 
+        List<Bid> bidList = new ArrayList<>();
+        bidList.add(new Bid(formData.getPrice()));
+
+
         AuctionDocument auctionDocument = new AuctionDocument(
                 formData.getDescription(),
                 carToSave,
                 configToSave,
                 formData.getMilleageKm(),
                 calculatePrice(formData),
-                formData.getProductionYear()
+                formData.getProductionYear(),
+                bidList
         );
 
         return auctionRepository.save(auctionDocument).getId();

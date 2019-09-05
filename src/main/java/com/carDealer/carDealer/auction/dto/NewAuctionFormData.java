@@ -9,6 +9,8 @@ public class NewAuctionFormData {
     private int price;
     private String productionYear;
 
+    private String bid;
+
     public NewAuctionFormData() {
     }
 
@@ -58,5 +60,13 @@ public class NewAuctionFormData {
 
     public void setProductionYear(String productionYear) {
         this.productionYear = productionYear;
+    }
+
+    public String getBid() {
+        return bid;
+    }
+
+    public void setBid(String bid) {
+        this.bid = bid;
     }
 }

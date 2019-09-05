@@ -1,5 +1,6 @@
 package com.carDealer.carDealer.auction.dto;
 
+import com.carDealer.carDealer.bid.dto.Bid;
 import com.carDealer.carDealer.cars.dto.Car;
 import com.carDealer.carDealer.configuration.dto.Configuration;
 
@@ -15,6 +16,8 @@ public class Auction {
 
     private int price;
     private String productionYear;
+
+    private List<Bid> biddingList;
 
     public Auction() {}
 
@@ -72,5 +75,13 @@ public class Auction {
 
     public void setProductionYear(String productionYear) {
         this.productionYear = productionYear;
+    }
+
+    public List<Bid> getBiddingList() {
+        return biddingList;
+    }
+
+    public void setBiddingList(List<Bid> biddingList) {
+        this.biddingList = biddingList;
     }
 }

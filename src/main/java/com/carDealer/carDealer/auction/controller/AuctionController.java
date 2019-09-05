@@ -1,6 +1,7 @@
 package com.carDealer.carDealer.auction.controller;
 
 import com.carDealer.carDealer.auction.dto.Auction;
+import com.carDealer.carDealer.auction.dto.BidAuctionFormData;
 import com.carDealer.carDealer.auction.dto.NewAuctionFormData;
 import com.carDealer.carDealer.auction.service.AuctionService;
 import com.carDealer.carDealer.cars.dto.Make;
@@ -51,12 +52,19 @@ public class AuctionController {
     public String getAuction(@PathVariable String auctionId, Model model) {
         Auction getAuction = auctionService.getById(auctionId);
         model.addAttribute("getAuction", getAuction);
+        model.addAttribute("newBid", new BidAuctionFormData());
 
         return "auction";
     }
 
+    @PostMapping("/bidAuction/{id}")
+    public String bidAuction(@PathVariable String id, @RequestParam int amount) {
+        auctionService.bidAuction(id, amount);
+        return "getAuction/{id}";
+    }
+
     @GetMapping("/addAuction")
-    public String addAuction(Model model){
+    public String addAuction(Model model) {
         model.addAttribute("addNewAuction", new NewAuctionFormData());
         model.addAttribute("allCars", carService.getAllCars());
         model.addAttribute("allConfig", configurationService.getAllConfigurations());
@@ -65,7 +73,7 @@ public class AuctionController {
     }
 
     @DeleteMapping("deleteAuctionAction/{idToDelete}")
-    public RedirectView deleteAuction(@PathVariable String idToDelete){
+    public RedirectView deleteAuction(@PathVariable String idToDelete) {
         auctionService.deleteById(idToDelete);
         RedirectView redirectView = new RedirectView();
         redirectView.setUrl("/allAuctionsPage");
@@ -73,7 +81,7 @@ public class AuctionController {
     }
 
     @PostMapping("/addAuction")
-    public RedirectView addAuction(@ModelAttribute("addNewAuction") NewAuctionFormData auction, Model model){
+    public RedirectView addAuction(@ModelAttribute("addNewAuction") NewAuctionFormData auction, Model model) {
         auctionService.addNewAuction(auction);
 //        auctionService.createAuction(auction);
         RedirectView view = new RedirectView();

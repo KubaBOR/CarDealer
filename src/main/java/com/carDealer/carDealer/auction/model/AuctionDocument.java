@@ -1,5 +1,6 @@
 package com.carDealer.carDealer.auction.model;
 
+import com.carDealer.carDealer.bid.dto.Bid;
 import com.carDealer.carDealer.cars.dto.Car;
 import com.carDealer.carDealer.cars.model.CarDocument;
 import com.carDealer.carDealer.configuration.dto.Configuration;
@@ -7,6 +8,7 @@ import com.carDealer.carDealer.configuration.model.ConfigurationDocument;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 @Document(collection = "auction")
 public class AuctionDocument {
@@ -21,24 +23,20 @@ public class AuctionDocument {
     private int price;
     private String productionYear;
 
+    private List<Bid> biddingList;
+
     public AuctionDocument() { }
 
-    public AuctionDocument(String description, CarDocument car, List<ConfigurationDocument> configurations, int milleageKm, int price, String productionYear) {
+    public AuctionDocument(String description, CarDocument car, List<ConfigurationDocument> configurations, int milleageKm, int price, String productionYear, List<Bid> biddingList) {
         this.description = description;
         this.car = car;
         this.configurations = configurations;
         this.milleageKm = milleageKm;
         this.price = price;
         this.productionYear = productionYear;
+        this.biddingList = biddingList;
     }
 
-    public AuctionDocument(String description, CarDocument car, List<ConfigurationDocument> configurations, int price, String productionYear) {
-        this.description = description;
-        this.car = car;
-        this.configurations = configurations;
-        this.price = price;
-        this.productionYear = productionYear;
-    }
 
     public String getId() {
         return id;
@@ -94,6 +92,14 @@ public class AuctionDocument {
 
     public void setProductionYear(String productionYear) {
         this.productionYear = productionYear;
+    }
+
+    public List<Bid> getBiddingList() {
+        return biddingList;
+    }
+
+    public void setBiddingList(List<Bid> biddingList) {
+        this.biddingList = biddingList;
     }
 }
 
