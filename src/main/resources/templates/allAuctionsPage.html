@@ -43,6 +43,12 @@
 
                             <!--                            <input type="submit" class="btn btn-outline-secondary" value="&#128465;">-->
                         </form>
+                        <br>
+                        <form action="#" th:action="@{/getAuction/{id}(id=${auction.id})}" method="get">
+                            <button class="btn btn-outline-primary" type="submit">
+                                <i class='fas fa-external-link-square-alt'></i>
+                            </button>
+                        </form>
                     </td>
                     <td>
                         <div th:each="car : ${auction.car}">

@@ -39,16 +39,10 @@ public class AuctionService {
         this.modelMapper = modelMapper;
     }
 
-    /*public String createNewAuction (AuctionController.NewAuctionCarFormData auction){
-        modelMapper.getConfiguration().setAmbiguityIgnored(true);
-        AuctionDocument auctionDocument = modelMapper.map(auction, AuctionDocument.class);
-
-        return auctionRepository.save(auctionDocument).getId();
-    }*/
-
-    public String createAuction(Auction auction){
-        AuctionDocument auctionDocument = modelMapper.map(auction, AuctionDocument.class);
-        return auctionRepository.save(auctionDocument).getId();
+    public Auction getById(String auctionId) {
+        AuctionDocument getAuction = auctionRepository.getById(auctionId);
+        Auction auctionToReturn = modelMapper.map(getAuction, Auction.class);
+        return auctionToReturn;
     }
 
     public String addNewAuction (NewAuctionFormData formData) {

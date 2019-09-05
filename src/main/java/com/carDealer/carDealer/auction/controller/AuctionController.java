@@ -47,10 +47,13 @@ public class AuctionController {
         return "addNewAuctionPage";
     }
 
-/*    public String getCarById(@PathVariable String id) {
-        String make = carService.getCarById(id).getMake();
-        return make;
-    }*/
+    @GetMapping("getAuction/{auctionId}")
+    public String getAuction(@PathVariable String auctionId, Model model) {
+        Auction getAuction = auctionService.getById(auctionId);
+        model.addAttribute("getAuction", getAuction);
+
+        return "auction";
+    }
 
     @GetMapping("/addAuction")
     public String addAuction(Model model){
