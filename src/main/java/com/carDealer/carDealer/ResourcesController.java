@@ -8,4 +8,7 @@ public class ResourcesController {
 
     @GetMapping("/fragments")
     public String thymeleafFragments(){ return "fragments"; }
+
+    @GetMapping("/management")
+    public String managementPage(){return "management";}
 }
