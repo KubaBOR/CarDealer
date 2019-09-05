@@ -11,6 +11,8 @@ import com.carDealer.carDealer.configuration.repository.ConfigurationRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.parser.Parser;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,7 +51,6 @@ public class AuctionService {
         return auctionRepository.save(auctionDocument).getId();
     }
 
-    //new method!
     public String addNewAuction (NewAuctionFormData formData) {
 
         String carId = formData.getCar();
@@ -66,11 +67,29 @@ public class AuctionService {
                 carToSave,
                 configToSave,
                 formData.getMilleageKm(),
-                formData.getPrice(),
+                calculatePrice(formData),
                 formData.getProductionYear()
         );
 
         return auctionRepository.save(auctionDocument).getId();
+    }
+
+    public int calculatePrice (NewAuctionFormData formData) {
+        CarDocument chosenCar = carRepository.getById(formData.getCar());
+        int basePrice = chosenCar.getBasePrice();
+
+        List<String> configPrice = Arrays.asList(formData.getConfigurations());
+        int configTotalPrice = configurationRepository.findAll()
+                .stream()
+                .filter(x -> configPrice.contains(x.getId()))
+                .mapToInt(ConfigurationDocument::getPrice)
+                .sum();
+
+        int currentYear = LocalDate.now().getYear();
+        int ageCost = 5000 * (currentYear - Integer.parseInt(formData.getProductionYear()));
+        double milleageCost = 0.38 * formData.getMilleageKm();
+
+        return (int) Math.round(basePrice + configTotalPrice - ageCost - milleageCost);
     }
 
     public void deleteById(String id){

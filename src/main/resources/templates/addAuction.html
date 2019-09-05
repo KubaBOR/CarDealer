@@ -15,6 +15,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-sm navbar-light">
@@ -33,11 +35,9 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
                     </div>
-                    <input id="auctionPrice" type="number" th:field="${addNewAuction.price}" class="form-control"
-                           aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                    <div class="input-group-append">
-                        <span class="input-group-text">PLN</span>
-                    </div>
+                    <input id="auctionPrice" type="text" class="form-control"
+                           aria-label="Small" aria-describedby="inputGroup-sizing-sm" readonly
+                    placeholder="Calculated automatically">
                 </div>
 
 
@@ -105,7 +105,7 @@
                 </div>-->
 
                 <br>
-                <input type="submit" class="btn btn-success">
+                <button type="submit" class="btn btn-primary">Confirm <i class="far fa-file-alt"></i></button>
                 </fieldset>
             </div>
         </form>

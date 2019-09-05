@@ -7,12 +7,14 @@ public class ConfigurationDocument {
     private String id;
 
     private String addon;
+    private int price;
 
     public ConfigurationDocument() {
     }
 
-    public ConfigurationDocument(String addon) {
+    public ConfigurationDocument(String addon, int price) {
         this.addon = addon;
+        this.price = price;
     }
 
     public String getId() {
@@ -31,11 +33,20 @@ public class ConfigurationDocument {
         this.addon = addon;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "ConfigurationDocument{" +
                 "id='" + id + '\'' +
                 ", addon='" + addon + '\'' +
+                ", price=" + price +
                 '}';
     }
 }

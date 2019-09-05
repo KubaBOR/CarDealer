@@ -7,6 +7,7 @@ public class Car {
     private String model;
     private String engine;
     private int horsePower;
+    private int basePrice;
 
     public Car(){}
 
@@ -48,5 +49,13 @@ public class Car {
 
     public void setHorsePower(int horsePower) {
         this.horsePower = horsePower;
+    }
+
+    public int getBasePrice() {
+        return basePrice;
+    }
+
+    public void setBasePrice(int basePrice) {
+        this.basePrice = basePrice;
     }
 }

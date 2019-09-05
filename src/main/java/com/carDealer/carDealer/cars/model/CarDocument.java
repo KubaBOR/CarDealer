@@ -3,8 +3,6 @@ package com.carDealer.carDealer.cars.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
-
 @Document(collection = "cars")
 public class CarDocument {
 
@@ -15,15 +13,17 @@ public class CarDocument {
     private String model;
     private String engine;
     private int horsePower;
+    private int basePrice;
 
     public CarDocument() {
     }
 
-    public CarDocument(String make, String model, String engine, int horsePower) {
+    public CarDocument(String make, String model, String engine, int horsePower, int basePrice) {
         this.make = make;
         this.model = model;
         this.engine = engine;
         this.horsePower = horsePower;
+        this.basePrice = basePrice;
     }
 
     public String getId() {
@@ -66,6 +66,13 @@ public class CarDocument {
         this.horsePower = horsePower;
     }
 
+    public int getBasePrice() {
+        return basePrice;
+    }
+
+    public void setBasePrice(int basePrice) {
+        this.basePrice = basePrice;
+    }
 
     @Override
     public String toString() {

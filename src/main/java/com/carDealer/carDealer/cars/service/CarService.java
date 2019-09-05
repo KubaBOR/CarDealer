@@ -77,13 +77,13 @@ public class CarService {
     @PostConstruct
     private void addBasicCars(){
         if (carRepository.count()<10) {
-            carRepository.save(new CarDocument("BMW", "320i", "2.0L", 180));
-            carRepository.save(new CarDocument("BMW", "325i", "2.5L", 210));
-            carRepository.save(new CarDocument("BMW", "330i", "2.5L", 258));
-            carRepository.save(new CarDocument("BMW", "335i", "3,0L", 306));
-            carRepository.save(new CarDocument("BMW", "M3", "3,2L", 440));
-            carRepository.save(new CarDocument("BMW", "320d", "2.0L", 160));
-            carRepository.save(new CarDocument("BMW", "325d", "2.0L", 197));
+            carRepository.deleteAll();
+            carRepository.save(new CarDocument("BMW", "320i", "2.0L", 184, 156000));
+            carRepository.save(new CarDocument("BMW", "330i", "2.0L", 258, 178000));
+            carRepository.save(new CarDocument("BMW", "M340i", "3,0L", 374, 277000));
+            carRepository.save(new CarDocument("BMW", "318d", "2.0L", 150, 149000));
+            carRepository.save(new CarDocument("BMW", "320d", "2.0L", 190, 161500));
+            carRepository.save(new CarDocument("BMW", "330d", "3.0L", 265, 227000));
         }
     }
 
