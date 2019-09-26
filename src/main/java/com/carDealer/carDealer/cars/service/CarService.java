@@ -62,7 +62,9 @@ public class CarService {
                 .map(carDocument -> modelMapper.map(carDocument, Car.class))
                 .collect(Collectors.toList());
     }
-
+/**
+ * @deprecated
+ * */
     public String saveMake(Make make) {
         MakeDocument makeDocument = modelMapper.map(make, MakeDocument.class);
         return makeRepository.save(makeDocument).getId();

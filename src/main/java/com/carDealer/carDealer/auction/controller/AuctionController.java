@@ -58,9 +58,11 @@ public class AuctionController {
     }
 
     @PostMapping("/bidAuction/{id}")
-    public String bidAuction(@PathVariable String id, @RequestParam int amount) {
+    public RedirectView bidAuction(@PathVariable String id, @RequestParam int amount) {
         auctionService.bidAuction(id, amount);
-        return "getAuction/{id}";
+        RedirectView redirectView = new RedirectView();
+        redirectView.setUrl("/getAuction/{id}");
+        return redirectView;
     }
 
     @GetMapping("/addAuction")

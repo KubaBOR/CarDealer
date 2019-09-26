@@ -67,8 +67,10 @@ public class AuctionService {
                 .filter(configurationDocument -> configurationIds.contains(configurationDocument.getId()))
                 .collect(Collectors.toList());
 
+        int totalPrice = calculatePrice(formData);
+
         List<Bid> bidList = new ArrayList<>();
-        bidList.add(new Bid(formData.getPrice()));
+        bidList.add(new Bid(totalPrice));
 
 
         AuctionDocument auctionDocument = new AuctionDocument(
@@ -76,7 +78,7 @@ public class AuctionService {
                 carToSave,
                 configToSave,
                 formData.getMilleageKm(),
-                calculatePrice(formData),
+                totalPrice,
                 formData.getProductionYear(),
                 bidList
         );

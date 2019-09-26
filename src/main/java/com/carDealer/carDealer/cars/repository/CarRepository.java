@@ -8,4 +8,5 @@ public interface CarRepository extends MongoRepository<CarDocument, String> {
     CarDocument getById(String id);
 
     CarDocument getByMake(String make);
+    CarDocument getByMakeAndAndModel(String make, String model);
 }

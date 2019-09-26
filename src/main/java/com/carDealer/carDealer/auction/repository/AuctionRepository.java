@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public interface AuctionRepository extends MongoRepository<AuctionDocument, String> {
 
     AuctionDocument getById(String id);
+    AuctionDocument getByProductionYear(String year);
 //    AuctionDocument getByPriceIsBetween(int priceLowBound, int priceHighBound);
 
 
