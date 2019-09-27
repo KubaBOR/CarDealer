@@ -1,23 +1,19 @@
 package com.carDealer.carDealer.user.dto;
 
+import com.carDealer.carDealer.user.model.RoleDocument;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 public class User {
 
     private String id;
-    @NotNull
-    @NotEmpty
     private String firstName;
-    @NotNull
-    @NotEmpty
     private String lastName;
-    @NotNull
-    @NotEmpty
     private String email;
-    @NotNull
-    @NotEmpty
     private String password;
+    private Set<RoleDocument> roles;
 
     public User() {}
 
@@ -59,5 +55,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<RoleDocument> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<RoleDocument> roles) {
+        this.roles = roles;
     }
 }

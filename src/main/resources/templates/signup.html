@@ -19,61 +19,60 @@
 
 </head>
 <body>
-<div class="row">
-    <div class="col-lg-4"></div>
-    <div class="col-lg-4 text-center">
+<div class="row" style="margin-top: 200px">
+    <div class="col-lg-5 text-right">
+        <div style="margin-top: 50px"></div>
+        <span><i class="fas fa-user-plus fa-4x"></i></span>
+    </div>
+    <div class="col-lg-2 text-center">
 
-
-        <form class="form-signin" th:action="@{/addUserAction}" method="post">
-            <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" />
-            <h1 class="h3 mb-3 font-weight-normal">Signup Here</h1>
+        <form th:action="@{/signup}" th:object="${newUser}" th:method="post">
+            <h1 class="h3 mb-3 font-weight-normal">Register new account</h1>
             <div th:if="${param.error}">
                 Invalid email and password.
             </div>
             <div th:if="${param.logout}">
                 You have been logged out.
             </div>
-            <label for="inputUsername" class="sr-only">Username</label>
-            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Username" required="" />
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="" />
-            <label for="inputFullname" class="sr-only">Full Name</label>
-            <input type="text" name="lastName" id="inputEmail" class="form-control" placeholder="Last name" required="" />
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
-        </form>
-        <form class="form-signin" th:action="@{/login}" method="get">
-            <button class="btn btn-md btn-success btn-block" type="Submit">Sign In</button>
-        </form>
-
-
-<!--        <form action="#" class="form-signin" th:action="@{/addUserAction}" th:object="${newUser}" th:method="post" method="post">
-
-            <h1 class="h3 mb-3 font-weight-normal">Create your account</h1>
-            <div th:if="${param.error}">
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Invalid password!</strong> Enter correct password.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Email</span>
                 </div>
+<!--                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Username" required="" />-->
+                <input type="text" class="form-control" th:field="${newUser.email}">
             </div>
-            <div th:if="${param.logout}">
-                You have been logged out.
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Password</span>
+                </div>
+<!--                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="" />-->
+                <input type="text" class="form-control" th:field="${newUser.password}">
+
             </div>
-            <label for="inputEmail" class="sr-only">Email</label>
-            <input type="text" th:field="${newUser.email}" id="inputEmail" class="form-control" placeholder="Email address" required=""/>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" th:field="${newUser.password}" id="inputPassword" class="form-control" placeholder="Password"
-                   required=""/>
-            <label for="inputLastName" class="sr-only">Full Name</label>
-            <input type="text" name="firstName" id="inputFirstName" class="form-control" placeholder="First Name"
-                   required=""/>
-            <input type="text" name="lastName" th:field="${newUser.lastName}" id="inputLastName" class="form-control" placeholder="Last Name"
-                   required=""/>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
-        </form>-->
+
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">First Name</span>
+                </div>
+                <input type="text" class="form-control" th:field="${newUser.firstName}">
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Last Name</span>
+                </div>
+<!--                <input type="text" name="lastName" id="inputLastName" class="form-control" placeholder="Last name" required="" />-->
+                <input type="text" class="form-control" th:field="${newUser.lastName}">
+            </div>
+            <input type="submit" value="Register" class="btn btn-primary btn-block"></input>
+        </form>
+        <br>
+        <form th:action="@{/login}" method="get">
+            <button class="btn btn-outline-secondary" type="Submit">Sign In</button>
+        </form>
+
     </div>
-    <div class="col-lg-4"></div>
+    <div class="col-lg-5"></div>
 </div>
 </body>
 </html>

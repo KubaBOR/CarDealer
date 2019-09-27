@@ -7,7 +7,12 @@ import com.carDealer.carDealer.auction.service.AuctionService;
 import com.carDealer.carDealer.cars.dto.Make;
 import com.carDealer.carDealer.cars.service.CarService;
 import com.carDealer.carDealer.configuration.service.ConfigurationService;
+import com.carDealer.carDealer.user.dto.User;
+import com.carDealer.carDealer.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,11 +29,14 @@ public class AuctionController {
 
     private final ConfigurationService configurationService;
 
+    private final UserService userService;
+
     @Autowired
-    public AuctionController(AuctionService auctionService, CarService carService, ConfigurationService configurationService) {
+    public AuctionController(AuctionService auctionService, CarService carService, ConfigurationService configurationService, UserService userService) {
         this.auctionService = auctionService;
         this.carService = carService;
         this.configurationService = configurationService;
+        this.userService = userService;
     }
 
     @GetMapping("/allAuctionsPage")
@@ -58,8 +66,12 @@ public class AuctionController {
     }
 
     @PostMapping("/bidAuction/{id}")
-    public RedirectView bidAuction(@PathVariable String id, @RequestParam int amount) {
-        auctionService.bidAuction(id, amount);
+    public RedirectView bidAuction(@PathVariable String id, @RequestParam int amount, Model model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.getByEmail(auth.getName());
+        model.addAttribute("currentUser", user);
+
+        auctionService.bidAuction(id, amount, user);
         RedirectView redirectView = new RedirectView();
         redirectView.setUrl("/getAuction/{id}");
         return redirectView;
@@ -85,7 +97,6 @@ public class AuctionController {
     @PostMapping("/addAuction")
     public RedirectView addAuction(@ModelAttribute("addNewAuction") NewAuctionFormData auction, Model model) {
         auctionService.addNewAuction(auction);
-//        auctionService.createAuction(auction);
         RedirectView view = new RedirectView();
         view.setUrl("/allAuctionsPage");
         return view;

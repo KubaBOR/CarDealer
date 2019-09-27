@@ -74,32 +74,53 @@
                 <span th:text="${auction.description}"></span>
             </p>
 
-            <table class="table">
+            <div th:each="auction : ${getAuction}">
+                <form action="#" th:action="@{'/bidAuction/{id}'(id=${auction.id})}" th:object="${newBid}"
+                      method="post">
+
+                    <div class="col-md-4">
+                        <div class="input-group input-group-md mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Outbid by</span>
+                            </div>
+                            <input type="number" class="form-control" th:field="${newBid.amount}"
+                                   th:value="${newBid.amount}" required aria-label="small"
+                                   aria-describedby="inputGroup-sizing-sm">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Place Bid</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <table class="table table-dark">
                 <thead>
                 <tr>
-                    <th>Bids</th>
+                    <th>Bid Price</th>
+                    <th>Bidder</th>
                 </tr>
                 </thead>
                 <tbody>
 
 
-                <tr>
-                    <td th:each="auction: ${getAuction}">
-                        <div th:each="bid : ${auction.biddingList}">
-                            <span th:text="${bid.amount}"></span>
+                <div th:each="auction: ${getAuction}">
+                    <tr th:each="bid : ${auction.biddingList}">
+
+                        <td th:text="${bid.amount} + ' PLN'"></td>
+
+                        <div th:each="user : ${bid.user}">
+                            <td th:text="${user.email}"></td>
                         </div>
-                    </td>
-                </tr>
+
+                    </tr>
+                </div>
+
                 </tbody>
             </table>
 
-            <div th:each="auction : ${getAuction}">
-                <form action="#" th:action="@{'/bidAuction/{id}'(id=${auction.id})}" th:object="${newBid}"
-                      method="post">
-                    <input type="number" th:field="${newBid.amount}" th:value="${newBid.amount}">
-                    <button class="btn btn-success" type="submit">Submit</button>
-                </form>
-            </div>
+
 
         </div>
     </div>

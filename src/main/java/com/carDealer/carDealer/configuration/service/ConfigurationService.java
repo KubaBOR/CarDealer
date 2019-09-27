@@ -69,6 +69,10 @@ public class ConfigurationService {
             configurationRepository.save(new ConfigurationDocument("Parking assist - full", 2000));
             configurationRepository.save(new ConfigurationDocument("Dusk sensor", 0));
             configurationRepository.save(new ConfigurationDocument("Rain sensor", 0));
+            configurationRepository.save(new ConfigurationDocument("Alloy wheels 17\"", 0));
+            configurationRepository.save(new ConfigurationDocument("Alloy wheels 18\"", 3000));
+            configurationRepository.save(new ConfigurationDocument("Alloy wheels 19\"", 6000));
+            configurationRepository.save(new ConfigurationDocument("Alloy wheels 20\"", 9000));
         }
     }
 }

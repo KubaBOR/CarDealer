@@ -9,6 +9,7 @@ import com.carDealer.carDealer.cars.model.CarDocument;
 import com.carDealer.carDealer.cars.repository.CarRepository;
 import com.carDealer.carDealer.configuration.model.ConfigurationDocument;
 import com.carDealer.carDealer.configuration.repository.ConfigurationRepository;
+import com.carDealer.carDealer.user.dto.User;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -46,10 +47,15 @@ public class AuctionService {
         return auctionToReturn;
     }
 
-    public Auction bidAuction(String auctionId, int amount) {
+    public Auction bidAuction(String auctionId, int amount, User user) {
         AuctionDocument getAuction = auctionRepository.getById(auctionId);
         List<Bid> getBids = getAuction.getBiddingList();
-        getBids.add(new Bid(amount));
+        int lastBidIndex = getBids.size();
+
+
+        int amountOfBids = getAuction.getBiddingList().size();
+        int amountToBid = getBids.get(lastBidIndex - 1).getAmount() + (amount);
+        getBids.add(new Bid(amountToBid, user));
         getAuction.setBiddingList(getBids);
         auctionRepository.save(getAuction);
 

@@ -1,6 +1,8 @@
+/*
 package com.carDealer.carDealer;
 
 import com.carDealer.carDealer.user.dto.User;
+import com.carDealer.carDealer.user.dto.UserFormData;
 import com.carDealer.carDealer.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -17,54 +19,54 @@ import org.springframework.web.servlet.view.RedirectView;
 @Controller
 public class LoginController {
 
+    private final UserService userService;
+
     @Autowired
     public LoginController(UserService userService) {
         this.userService = userService;
     }
 
-    @GetMapping("login")
-    public String login(Model model) {
-        setupModel(model);
-        return "login";
-    }
+
 
     @GetMapping("signup")
     public String signupPage(Model model) {
         setupModel(model);
+        model.addAttribute("newUser", new UserFormData());
         return "signup";
     }
 
 
-    private UserService userService;
+    @GetMapping(name = "/signup")
+    public String addUser(Model model) {
+        model.addAttribute("newUser", new UserFormData());
 
-
-    @GetMapping(name = "/addUserAction")
-    public ModelAndView signup() {
-        ModelAndView modelAndView = new ModelAndView();
-        User user = new User();
-        modelAndView.addObject("user", user);
-        modelAndView.setViewName("signup");
-        return modelAndView;
+        return "signup";
 
     }
 
     @PostMapping("/addUserAction")
-    public RedirectView addUser(@ModelAttribute("newUser") User user) {
+    public RedirectView addUser(@ModelAttribute("newUser") UserFormData formData, Model model) {
 
-        /*User doesUserExist = userService.getByEmail(user.getEmail());
+        userService.addUser(formData);
+        RedirectView redirectView = new RedirectView();
+        redirectView.setUrl("/management");
+        return redirectView;
+        */
+/*User doesUserExist = userService.getByEmail(user.getEmail());
         if (doesUserExist != null) {
-           *//* bindingResult.rejectValue("email", "error.user",
-                    "User already exists.");*//*
+          bindingResult.rejectValue("email", "error.user",
+                    "User already exists.");
            RedirectView redirectView = new RedirectView();
            redirectView.setUrl("signup");
            return redirectView;
 
-        } else {*/
+        } else {
             userService.addUser(user);
-        //}
+        }
         RedirectView redirectView = new RedirectView();
-        redirectView.setUrl("/index.html");
-        return redirectView;
+        redirectView.setUrl("/welcome.html");
+        return redirectView;*//*
+
     }
 
     @GetMapping(value = "/dashboard")
@@ -79,6 +81,7 @@ public class LoginController {
     }
 
     private void setupModel(Model model) {
-        model.addAttribute("newUser", new User());
+        model.addAttribute("newUser", new UserFormData());
     }
 }
+*/

@@ -1,6 +1,7 @@
 package com.carDealer.carDealer.user.service;
 
 import com.carDealer.carDealer.user.dto.User;
+import com.carDealer.carDealer.user.dto.UserFormData;
 import com.carDealer.carDealer.user.model.RoleDocument;
 import com.carDealer.carDealer.user.model.UserDocument;
 import com.carDealer.carDealer.user.repository.RoleRepository;
@@ -39,15 +40,45 @@ public class UserService implements UserDetailsService {
         userRepository.deleteById(id);
     }
 
-    public String addUser(User user) {
-        RoleDocument userRole = roleRepository.getByRole("ADMIN");
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 
-        UserDocument userToSave = modelMapper.map(user, UserDocument.class);
-        userToSave.setRoles(new HashSet<>(Arrays.asList(userRole)));
+    public String addUser(UserFormData formData) {
+
+
+        RoleDocument userRole = roleRepository.getByRole("ADMIN");
+
+        UserDocument userToSave = new UserDocument(
+                formData.getFirstName(),
+                formData.getLastName(),
+                formData.getEmail(),
+                bCryptPasswordEncoder.encode(formData.getPassword()),
+                new HashSet<>(Arrays.asList(userRole))
+        );
 
         return userRepository.save(userToSave).getId();
     }
+
+/*    public boolean validateUniqueEmail(UserFormData formData) {
+        try {
+            UserDocument doesExist = userRepository.getByEmail(formData.getEmail());
+            if (doesExist.getId().isEmpty()) {
+                return true;
+            }
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }*/
+
+
+/*        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        user.setRoles(new HashSet<>(Arrays.asList(userRole)));
+
+        UserDocument userToSave = modelMapper.map(user, UserDocument.class);
+//        userToSave.setRoles(new HashSet<>(Arrays.asList(userRole)));
+
+        return userRepository.save(userToSave).getId();*/
+
 
     public List<User> getAllUsers() {
         return userRepository.findAll().stream()

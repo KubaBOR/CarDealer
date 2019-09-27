@@ -1,6 +1,8 @@
 package com.carDealer.carDealer.user.model;
 
+import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Set;
@@ -17,6 +19,14 @@ public class UserDocument {
     private Set<RoleDocument> roles;
 
     public UserDocument() {
+    }
+
+    public UserDocument(String firstName, String lastName, String email, String password, Set<RoleDocument> roles) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
     }
 
     public String getId() {
