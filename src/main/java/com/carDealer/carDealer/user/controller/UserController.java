@@ -8,10 +8,15 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
+
+import javax.validation.Valid;
 
 @Controller
 public class UserController {
@@ -29,9 +34,8 @@ public class UserController {
         return "login";
     }
 
-
     @GetMapping("/signup")
-    public String signupPage(Model model) {
+    public String signupPage(Model model, UserFormData userFormData) {
         setupModel(model);
         model.addAttribute("newUser", new UserFormData());
         return "signup";
@@ -47,14 +51,30 @@ public class UserController {
 
 
     @PostMapping("/signup")
-    public RedirectView addUser(@ModelAttribute("newUser") UserFormData formData) {
-
-
-        userService.addUser(formData);
+    public String addUser(@ModelAttribute("newUser") @Valid UserFormData formData, BindingResult bindingResult,
+                          RedirectAttributes attributes) {
 
         RedirectView redirectView = new RedirectView();
         redirectView.setUrl("/signup");
-        return redirectView;
+
+        if (userService.isEmailTaken(formData.getEmail())){
+            FieldError error = new FieldError(
+                    "email",
+                    "email",
+                    "This email is already taken!");
+            bindingResult.addError(error);
+
+            return "signup";
+        }
+
+        if (bindingResult.hasErrors()) {
+            return "signup";
+        }
+
+        userService.addUser(formData);
+        attributes.addFlashAttribute("message", "Account created successfuly!");
+
+        return "redirect:/signup";
 
     }
 

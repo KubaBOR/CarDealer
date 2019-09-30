@@ -26,6 +26,8 @@
     </div>
     <div class="col-lg-2 text-center">
 
+        <div class="alert alert-success" th:if="${message}" th:text="${message}"></div>
+
         <form th:action="@{/signup}" th:object="${newUser}" th:method="post">
             <h1 class="h3 mb-3 font-weight-normal">Register new account</h1>
             <div th:if="${param.error}">
@@ -39,14 +41,25 @@
                     <span class="input-group-text">Email</span>
                 </div>
 <!--                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Username" required="" />-->
-                <input type="text" class="form-control" th:field="${newUser.email}">
+                <input type="email" th:unless="${#fields.hasErrors('email')}" required class="form-control" th:field="${newUser.email}">
+                <input type="email" th:if="${#fields.hasErrors('email')}" required class="form-control is-invalid" th:field="${newUser.email}">
+
+
+                <div class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:errors="${newUser.email}">
+                </div>
+
+
+                <!--<div class="input-group-append">
+                    <span class="input-group-text" th:if="${#fields.hasErrors('email')}" th:errors="${newUser.email}">
+                    </span>
+                </div>-->
             </div>
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Password</span>
                 </div>
 <!--                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="" />-->
-                <input type="text" class="form-control" th:field="${newUser.password}">
+                <input type="password" required pattern=".{4,}" title="Four or more characters" class="form-control" th:field="${newUser.password}">
 
             </div>
 
@@ -54,7 +67,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">First Name</span>
                 </div>
-                <input type="text" class="form-control" th:field="${newUser.firstName}">
+                <input type="text" required class="form-control" th:field="${newUser.firstName}">
             </div>
 
             <div class="input-group input-group-sm mb-3">
@@ -62,7 +75,7 @@
                     <span class="input-group-text">Last Name</span>
                 </div>
 <!--                <input type="text" name="lastName" id="inputLastName" class="form-control" placeholder="Last name" required="" />-->
-                <input type="text" class="form-control" th:field="${newUser.lastName}">
+                <input type="text" required class="form-control" th:field="${newUser.lastName}">
             </div>
             <input type="submit" value="Register" class="btn btn-primary btn-block"></input>
         </form>

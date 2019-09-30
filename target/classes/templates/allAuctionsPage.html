@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <title>Auction</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
@@ -16,6 +24,7 @@
 <nav class="navbar navbar-expand-sm navbar-light">
     <div th:insert="fragments :: mainNavbar"></div>
 </nav>
+<div th:insert="fragments :: loggedUser"></div>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -31,22 +40,24 @@
                     <th>Production Year</th>
                     <th>Configuration</th>
                     <th>Milleage</th>
-<!--                    <th>Description</th>-->
+                    <!--                    <th>Description</th>-->
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="auction: ${allAuctions}" style="border: 1px black">
                     <td>
-                        <form action="#" th:action="@{'deleteAuctionAction/{id}'(id=${auction.id})}" th:method="delete">
+                        <!-- TODO - Move delete button elswhere e.g. to specific auction or create manage auctions-->
+                        <!--<form action="#" th:action="@{'deleteAuctionAction/{id}'(id=${auction.id})}" th:method="delete">
                             <button class="btn btn-outline-danger" type="submit"
-                                    style='font-size:18px'><i class='far fa-trash-alt'></i></button>
+                                    style='font-size:18px'><i class='far fa-trash-alt'></i></button>-->
 
-                            <!--                            <input type="submit" class="btn btn-outline-secondary" value="&#128465;">-->
+                        <!--                            <input type="submit" class="btn btn-outline-secondary" value="&#128465;">-->
                         </form>
                         <br>
                         <form action="#" th:action="@{/getAuction/{id}(id=${auction.id})}" method="get">
                             <button class="btn btn-outline-primary" type="submit">
-                                <i class='fas fa-external-link-square-alt'></i>
+                                View
+                                <i class="fas fa-link" style="size: 22px"></i>
                             </button>
                         </form>
 
@@ -67,7 +78,7 @@
                         </div>
                     </td>
                     <td th:text="${auction.milleageKm + ' KM'}"></td>
-<!--                    <td th:text="${auction.description}"></td>-->
+                    <!--                    <td th:text="${auction.description}"></td>-->
 
                     <!-- <td th:text="${auction.car.carMake + ' '
                      + auction.car.model}"/>
@@ -75,8 +86,8 @@
                      <td th:text="${auction.car.color}"></td>-->
 
                 </tr>
-               <!-- <td th:each="car : ${allCars}"
-                    th:text="${#request.getCarById/{id}'id=${auction.carId}) }"></td>-->
+                <!-- <td th:each="car : ${allCars}"
+                     th:text="${#request.getCarById/{id}'id=${auction.carId}) }"></td>-->
                 <!--<tr th:each="auction: ${allAuctions}" style="border: 1px black">
                     <td th:text="${auction.title}"></td>
                     <td th:text="${auction.price}"></td>

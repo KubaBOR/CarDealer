@@ -1,5 +1,6 @@
 package com.carDealer.carDealer.user.dto;
 
+
 public class UserFormData {
 
     private String email;

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>
@@ -22,30 +23,60 @@
 <nav class="navbar navbar-expand-sm navbar-light">
     <div th:insert="fragments :: mainNavbar"></div>
 </nav>
+<div th:insert="fragments :: loggedUser"></div>
+
 <div class="container">
-    <div class="row">
-        <div class="col-md-1">
-            <a href="/allCarsPage">
-                <button class="btn btn-outline-primary">Cars</button>
-            </a>
+    <div class="row" style="margin-top: 150px">
+        <div class="col-md-3">
+            <div class="card car-height">
+                <img src="../static/img/bmwM135i.jpg" th:src="@{img/bmwM135i.jpg}" class="card-img-top"
+                     alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">BMW Catalogue</h5>
+                    <p class="card-text">Manage BMW Models in our catalogue</p>
 
+                </div>
+                <a href="/allCarsPage" class="btn btn-primary">BMW Catalogue</a>
+            </div>
         </div>
-        <div class="col-md-2">
-            <a href="/allConfigPage">
-                <button class="btn btn-outline-primary">Configurations</button>
-            </a>
-        </div>
-        <div class="col-md-2">
-            <a href="/addAuction">
-                <button class="btn btn-primary">Add auction</button>
-            </a>
+        <div class="col-md-3">
 
+            <div class="card car-height">
+                <img src="../static/img/bmwDashboard.png" th:src="@{img/bmwDashboard.png}" class="card-img-top"
+                     alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Configurations</h5>
+                    <p class="card-text">Manage possible configurations for car interior and exterior</p>
+                </div>
+                <a href="/allConfigPage" class="btn btn-primary">Configurations</a>
+            </div>
         </div>
-        <div class="col-md-2">
-<!--            <button class="btn btn-warning" th:text="${currentUser.email}"></button>-->
+        <div class="col-md-3">
+            <div class="card car-height">
+                <img src="../static/img/bmw3front2019.jpg" th:src="@{img/bmw3front2019.jpg}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">New Auction</h5>
+                    <p class="card-text">Provide all the information necessary to add new BMW to auction.</p>
+                </div>
+                <a href="/addAuction" class="btn btn-primary">New Auction</a>
+            </div>
         </div>
-
+        <div class="col-md-3">
+            <div class="card car-height">
+                <img src="../static/img/bmw3rear2019.jpg" th:src="@{img/bmw3rear2019.jpg}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Auctions</h5>
+                    <p class="card-text">View our current auctions of BMW Group cars here</p>
+                </div>
+                <a href="/allAuctionsPage" class="btn btn-primary">Go to Auctions</a>
+            </div>
+        </div>
     </div>
+
+    <!--            <button class="btn btn-warning" th:text="${currentUser.email}"></button>-->
+
+
 </div>
+
 </body>
 </html>

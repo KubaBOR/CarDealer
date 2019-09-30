@@ -57,18 +57,15 @@ public class UserService implements UserDetailsService {
         return userRepository.save(userToSave).getId();
     }
 
-/*    public boolean validateUniqueEmail(UserFormData formData) {
-        try {
-            UserDocument doesExist = userRepository.getByEmail(formData.getEmail());
-            if (doesExist.getId().isEmpty()) {
-                return true;
-            }
-        }
-        catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }*/
+    public boolean isEmailTaken(String email) {
+
+        Optional<UserDocument> isTaken = userRepository.findAll()
+                .stream()
+                .filter(userDocument -> email.contains(userDocument.getEmail()))
+                .findAny();
+
+        return isTaken.isPresent();
+    }
 
 
 /*        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));

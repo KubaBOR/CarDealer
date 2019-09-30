@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>
@@ -22,14 +23,16 @@
 <nav class="navbar navbar-expand-sm navbar-light">
     <div th:insert="fragments :: mainNavbar"></div>
 </nav>
+<div th:insert="fragments :: loggedUser"></div>
+
 <div class="container">
     <div class="row">
         <div class="col-lg-6">
-            <h2>List of configuration options</h2>
-            <table class="table">
+            <h2>Configuration options catalogue</h2>
+            <table class="table table-sm">
                 <thead>
                 <tr>
-                    <th>Config</th>
+                    <th>Option</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -49,7 +52,7 @@
 
         <div class="col-lg-2"></div>
         <div class="col-lg-4">
-            <h2>Add new addon</h2>
+            <h2>Add new option</h2>
 
             <form action="#" th:action="@{/addConfigAction}" th:object="${newConfig}" th:method="post">
 

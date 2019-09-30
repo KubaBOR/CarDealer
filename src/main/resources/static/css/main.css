@@ -1,15 +1,17 @@
-h1, h2, h3, h4, h5, h6 {
-    font-family: AppleGothic;
+.car-height {
+    height: 400px;
 }
-a {
-    color: #1f5176;
+.bgmain {
+    background: url("../img/bmwM5bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
-.bgmain{
-
-
-    background: #0F2027;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
+.loggedUser {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 450px;
+    height: 20px;
 }

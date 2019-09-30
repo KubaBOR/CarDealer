@@ -62,6 +62,21 @@ public class AuctionService {
         return modelMapper.map(getAuction, Auction.class);
     }
 
+    public boolean validateBidPrice(int amount) {
+        if (amount < 500) {
+            return false;
+        }
+        if (amount > 10000){
+            return false;
+        }
+        if (amount % 500 != 0) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
     public String addNewAuction (NewAuctionFormData formData) {
 
         String carId = formData.getCar();

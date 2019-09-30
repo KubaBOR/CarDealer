@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{css/main.css}">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -16,11 +17,12 @@
 <nav class="navbar navbar-expand-sm navbar-light">
     <div th:insert="fragments :: mainNavbar"></div>
 </nav>
+<div th:insert="fragments :: loggedUser"></div>
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <h2>List of cars</h2>
-            <table class="table">
+        <div class="col-md-8">
+            <h2>BMW Group catalogue</h2>
+            <table class="table table-sm">
                 <thead>
                 <tr>
                     <th>Make</th>
@@ -48,9 +50,10 @@
             </table>
         </div>
 
-        <div class="container">
+        <div class="col-md-4">
             <h2>Add new car</h2>
-
+            <br>
+            <br>
             <form action="#" th:action="@{/addCarAction}" th:object="${newCar}" th:method="post">
                 <div class="form-group">
 
@@ -91,7 +94,7 @@
 
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Add" class="btn btn-primary"/>
+                    <button type="submit" class="btn btn-primary">Confirm <i class="far fa-file-alt"></i></button>
                 </div>
             </form>
         </div>

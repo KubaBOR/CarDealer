@@ -12,15 +12,15 @@
             <a class="nav-link" href="/management">Management Page</a>
         </li>
     </ul>
-    <span class="navbar-text">
-
-        <form action="#" th:action="@{/logout}">
-            <div class="input-group mb-3">
-                <div class="form-control">Currently logged: [[${#httpServletRequest.remoteUser}]]</div>
-                <div class="input-group-append">
-                <input type="submit" class="btn btn-primary" value="Sign out">
-                </div>
-            </div>
-        </form>
-    </span>
 </nav>
+
+<div class="loggedUser" th:fragment="loggedUser">
+    <form action="#" th:action="@{/logout}">
+        <div class="input-group mb-3">
+            <div style="color: #007bff;" class="form-control">Currently logged: [[${#httpServletRequest.remoteUser}]]</div>
+            <div class="input-group-append">
+                <input type="submit" class="btn btn-outline-primary" value="Sign out">
+            </div>
+        </div>
+    </form>
+</div>

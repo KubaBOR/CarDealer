@@ -71,7 +71,16 @@ public class AuctionController {
         User user = userService.getByEmail(auth.getName());
         model.addAttribute("currentUser", user);
 
+        /*if (auctionService.validateBidPrice(amount)) {
+            auctionService.bidAuction(id, amount, user);
+        }
+        else {
+
+        }*/
+
         auctionService.bidAuction(id, amount, user);
+
+
         RedirectView redirectView = new RedirectView();
         redirectView.setUrl("/getAuction/{id}");
         return redirectView;
@@ -83,6 +92,7 @@ public class AuctionController {
         model.addAttribute("allCars", carService.getAllCars());
         model.addAttribute("allConfig", configurationService.getAllConfigurations());
         model.addAttribute("allMakes", carService.getAllMakes());
+        model.addAttribute("message", "validation failored!");
         return "addAuction";
     }
 
