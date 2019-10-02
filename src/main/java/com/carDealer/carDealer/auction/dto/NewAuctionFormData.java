@@ -1,5 +1,7 @@
 package com.carDealer.carDealer.auction.dto;
 
+import com.carDealer.carDealer.photos.model.Photo;
+
 public class NewAuctionFormData {
 
     private String description;
@@ -10,6 +12,7 @@ public class NewAuctionFormData {
     private String productionYear;
 
     private String bid;
+    private Photo photo;
 
     public NewAuctionFormData() {
     }
@@ -68,5 +71,13 @@ public class NewAuctionFormData {
 
     public void setBid(String bid) {
         this.bid = bid;
+    }
+
+    public Photo getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Photo photo) {
+        this.photo = photo;
     }
 }

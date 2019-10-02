@@ -1,14 +1,12 @@
 package com.carDealer.carDealer.auction.model;
 
 import com.carDealer.carDealer.bid.dto.Bid;
-import com.carDealer.carDealer.cars.dto.Car;
 import com.carDealer.carDealer.cars.model.CarDocument;
-import com.carDealer.carDealer.configuration.dto.Configuration;
 import com.carDealer.carDealer.configuration.model.ConfigurationDocument;
+import com.carDealer.carDealer.photos.model.Photo;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.ArrayList;
 import java.util.List;
 @Document(collection = "auction")
 public class AuctionDocument {
@@ -24,10 +22,11 @@ public class AuctionDocument {
     private String productionYear;
 
     private List<Bid> biddingList;
+    private Photo photo;
 
     public AuctionDocument() { }
 
-    public AuctionDocument(String description, CarDocument car, List<ConfigurationDocument> configurations, int milleageKm, int price, String productionYear, List<Bid> biddingList) {
+    public AuctionDocument(String description, CarDocument car, List<ConfigurationDocument> configurations, int milleageKm, int price, String productionYear, List<Bid> biddingList, Photo photo) {
         this.description = description;
         this.car = car;
         this.configurations = configurations;
@@ -35,6 +34,7 @@ public class AuctionDocument {
         this.price = price;
         this.productionYear = productionYear;
         this.biddingList = biddingList;
+        this.photo = photo;
     }
 
 
@@ -100,6 +100,14 @@ public class AuctionDocument {
 
     public void setBiddingList(List<Bid> biddingList) {
         this.biddingList = biddingList;
+    }
+
+    public Photo getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Photo photo) {
+        this.photo = photo;
     }
 }
 

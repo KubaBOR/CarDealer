@@ -9,10 +9,15 @@ import com.carDealer.carDealer.cars.model.CarDocument;
 import com.carDealer.carDealer.cars.repository.CarRepository;
 import com.carDealer.carDealer.configuration.model.ConfigurationDocument;
 import com.carDealer.carDealer.configuration.repository.ConfigurationRepository;
+import com.carDealer.carDealer.photos.model.Photo;
 import com.carDealer.carDealer.user.dto.User;
+import org.bson.BsonBinarySubType;
+import org.bson.types.Binary;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -77,7 +82,7 @@ public class AuctionService {
         }
     }
 
-    public String addNewAuction (NewAuctionFormData formData) {
+    public String addNewAuction (NewAuctionFormData formData, MultipartFile image) throws IOException {
 
         String carId = formData.getCar();
         CarDocument carToSave = carRepository.getById(carId);
@@ -93,6 +98,8 @@ public class AuctionService {
         List<Bid> bidList = new ArrayList<>();
         bidList.add(new Bid(totalPrice));
 
+        Photo photo = new Photo();
+        photo.setImage(new Binary(BsonBinarySubType.BINARY, image.getBytes()));
 
         AuctionDocument auctionDocument = new AuctionDocument(
                 formData.getDescription(),
@@ -101,8 +108,8 @@ public class AuctionService {
                 formData.getMilleageKm(),
                 totalPrice,
                 formData.getProductionYear(),
-                bidList
-        );
+                bidList,
+                photo);
 
         return auctionRepository.save(auctionDocument).getId();
     }

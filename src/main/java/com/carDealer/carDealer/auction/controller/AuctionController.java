@@ -7,17 +7,20 @@ import com.carDealer.carDealer.auction.service.AuctionService;
 import com.carDealer.carDealer.cars.dto.Make;
 import com.carDealer.carDealer.cars.service.CarService;
 import com.carDealer.carDealer.configuration.service.ConfigurationService;
+import com.carDealer.carDealer.photos.model.Photo;
 import com.carDealer.carDealer.user.dto.User;
 import com.carDealer.carDealer.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 @Controller
@@ -58,6 +61,9 @@ public class AuctionController {
 
     @GetMapping("getAuction/{auctionId}")
     public String getAuction(@PathVariable String auctionId, Model model) {
+        Photo photo = auctionService.getById(auctionId).getPhoto();
+        model.addAttribute("image",
+                Base64.getEncoder().encodeToString(photo.getImage().getData()));
         Auction getAuction = auctionService.getById(auctionId);
         model.addAttribute("getAuction", getAuction);
         model.addAttribute("newBid", new BidAuctionFormData());
@@ -105,8 +111,10 @@ public class AuctionController {
     }
 
     @PostMapping("/addAuction")
-    public RedirectView addAuction(@ModelAttribute("addNewAuction") NewAuctionFormData auction, Model model) {
-        auctionService.addNewAuction(auction);
+    public RedirectView addAuction(@ModelAttribute("addNewAuction") NewAuctionFormData auction, Model model,
+                                   @RequestParam("image") MultipartFile file) throws IOException {
+        auctionService.addNewAuction(auction, file);
+
         RedirectView view = new RedirectView();
         view.setUrl("/allAuctionsPage");
         return view;

@@ -1,39 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c145a047-e01a-488a-8d12-43e0285e06ac" name="Default Changelist" comment="Implemented UserAuthentication,&#10;implemented Bidding system for auctions.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bmw3front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bmw3front2019.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bmw3rear.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bmw3rear2019.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bmw5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bmwBlack.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bmwDashboard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bmwM135i.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bmwM5.jpg" afterDir="false" />
+    <list default="true" id="c145a047-e01a-488a-8d12-43e0285e06ac" name="Default Changelist" comment="Implemented Unique emails for registration,&#10;implemented success message after registration.&#10;Modernised management page to be more visual.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/model/Photo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/LoginController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/controller/AuctionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/controller/AuctionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/Auction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/Auction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/NewAuctionFormData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/NewAuctionFormData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/model/AuctionDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/model/AuctionDocument.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/service/AuctionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/service/AuctionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/dto/UserFormData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/dto/UserFormData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addAuction.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addAuction.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/allCarsPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/allCarsPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/allConfigPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/allConfigPage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/auction.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/auction.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/management.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/management.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/allAuctionsPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/allAuctionsPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/allCarsPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/allCarsPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/allConfigPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/allConfigPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,61 +37,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/auction.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1860">
-              <caret line="128" column="50" selection-start-line="128" selection-start-column="50" selection-end-line="128" selection-end-column="50" />
+            <state relative-caret-position="356">
+              <caret line="120" column="26" lean-forward="true" selection-start-line="114" selection-start-column="20" selection-end-line="120" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#nav#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="56" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/signup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/controller/UserController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/model/Photo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3788#3789#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,6 +68,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -143,19 +88,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/cars/controller/MakeController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/addDocumentsPage.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/cars/dto/Make.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/thisCarPage.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/cars/model/CarDocument.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/cars/dto/Car.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/configuration/dto/Configuration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/configuration/model/ConfigurationDocument.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/management/controller/ManagementController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/Auction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/BidAuctionFormData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/NewAuctionFormData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/model/AuctionDocument.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/repository/AuctionRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/cars/repository/CarRepository.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/carDealer/carDealer/auction/service/AuctionServiceTests.java" />
@@ -176,16 +109,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/ResourcesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/configuration/service/ConfigurationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/cars/service/CarService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/service/AuctionService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/controller/AuctionController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/addAuction.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/management.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/fragments.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/allCarsPage.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/allConfigPage.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/auction.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/model/UserDocument.java" />
@@ -194,6 +121,24 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/success.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/signup.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/Photo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/repository/PhotoRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/photos.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/uploadPhoto.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/model/Photo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/Auction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/model/AuctionDocument.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/NewAuctionFormData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/service/AuctionService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/addAuction.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/main.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/getAuction.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/controller/AuctionController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/getAuction/main.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/auction.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/service/PhotoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/controller/PhotoController.java" />
       </list>
     </option>
   </component>
@@ -205,9 +150,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="952" />
+    <option name="y" value="-8" />
+    <option name="width" value="976" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -216,8 +162,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -279,7 +223,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="carDealer" type="462c0819:PsiDirectoryNode" />
               <item name="carDealer" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="auction" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Championships" type="b2602c69:ProjectViewProjectNode" />
@@ -290,7 +234,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="carDealer" type="462c0819:PsiDirectoryNode" />
               <item name="carDealer" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="auction" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -302,7 +246,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="carDealer" type="462c0819:PsiDirectoryNode" />
               <item name="carDealer" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="auction" type="462c0819:PsiDirectoryNode" />
               <item name="dto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -314,8 +258,8 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="carDealer" type="462c0819:PsiDirectoryNode" />
               <item name="carDealer" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="auction" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Championships" type="b2602c69:ProjectViewProjectNode" />
@@ -326,8 +270,19 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="carDealer" type="462c0819:PsiDirectoryNode" />
               <item name="carDealer" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="photos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Championships" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CarDealer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="carDealer" type="462c0819:PsiDirectoryNode" />
+              <item name="carDealer" type="462c0819:PsiDirectoryNode" />
+              <item name="photos" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Championships" type="b2602c69:ProjectViewProjectNode" />
@@ -365,6 +320,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -377,6 +334,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/img" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -572,7 +530,13 @@
       <workItem from="1569691516829" duration="972000" />
       <workItem from="1569796756219" duration="18000" />
       <workItem from="1569847307738" duration="1069000" />
-      <workItem from="1569851891719" duration="6955000" />
+      <workItem from="1569851891719" duration="7062000" />
+      <workItem from="1569864638649" duration="80000" />
+      <workItem from="1569870556551" duration="871000" />
+      <workItem from="1569927433543" duration="2477000" />
+      <workItem from="1569937265877" duration="1874000" />
+      <workItem from="1569942198682" duration="1260000" />
+      <workItem from="1570007445829" duration="13569000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1562235218714</created>
@@ -658,7 +622,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569582904372</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Implemented Unique emails for registration,&#10;implemented success message after registration.&#10;Modernised management page to be more visual.">
+      <created>1569858951060</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1569858951060</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -694,7 +665,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222058000" />
+    <option name="totallyTimeSpent" value="242296000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -707,9 +678,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21215352" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1881663" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -718,7 +688,7 @@
       <window_info id="Repositories" order="6" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32719395" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31527627" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31527627" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -798,7 +768,8 @@
     <MESSAGE value="Implemented auction bids." />
     <MESSAGE value="Implemented Spring Security." />
     <MESSAGE value="Implemented UserAuthentication,&#10;implemented Bidding system for auctions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented UserAuthentication,&#10;implemented Bidding system for auctions." />
+    <MESSAGE value="Implemented Unique emails for registration,&#10;implemented success message after registration.&#10;Modernised management page to be more visual." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Unique emails for registration,&#10;implemented success message after registration.&#10;Modernised management page to be more visual." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -813,108 +784,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test/2.1.5.RELEASE/spring-boot-test-2.1.5.RELEASE.jar!/org/springframework/boot/test/mock/mockito/MockBean.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/carDealer/carDealer/auction/service/AuctionServiceTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/repository/AuctionRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.6.RELEASE/spring-security-core-5.1.6.RELEASE.jar!/org/springframework/security/core/GrantedAuthority.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/repository/RoleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/cars/repository/CarRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/ChampionshipsApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/logo.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/welcome.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/Auction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="79" column="39" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
-          <folding>
-            <element signature="e#762#763#0" expanded="true" />
-            <element signature="e#808#809#0" expanded="true" />
-            <element signature="e#1697#1698#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/model/AuctionDocument.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/NewAuctionFormData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-          <folding>
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#712#713#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/configuration/dto/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -934,13 +807,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
@@ -965,21 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/bid/dto/Bid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#210#211#0" expanded="true" />
-            <element signature="e#246#247#0" expanded="true" />
-            <element signature="e#514#515#0" expanded="true" />
-            <element signature="e#541#542#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1038,40 +889,8 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/bmwBlack.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/controller/AuctionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="81" selection-start-line="81" selection-end-line="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/service/AuctionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
-          <folding>
-            <element signature="e#4523#4524#0" expanded="true" />
-            <element signature="e#4571#4572#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/addDocumentsPage.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1079,23 +898,6 @@
           <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/addAuction.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-64">
-          <caret line="59" column="72" selection-start-line="59" selection-start-column="72" selection-end-line="59" selection-end-column="72" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#button#0;n#form#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1139,37 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/auction.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="128" column="50" selection-start-line="128" selection-start-column="50" selection-end-line="128" selection-end-column="50" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#nav#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="56" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/model/UserDocument.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1205,26 +976,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/success.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="66" column="15" lean-forward="true" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="15" />
+        <state relative-caret-position="330">
+          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#nav#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/management.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="660">
+          <caret line="44" column="56" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="420">
           <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1233,20 +1009,210 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/success.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        <state relative-caret-position="975">
+          <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+        <state relative-caret-position="810">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3788#3789#0" expanded="true" />
+            <element signature="e#3719#3720#0" expanded="true" />
+            <element signature="e#3784#3785#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/bid/dto/Bid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#210#211#0" expanded="true" />
+            <element signature="e#246#247#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/NewAuctionFormData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+          <folding>
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#712#713#0" expanded="true" />
+            <element signature="e#1554#1555#0" expanded="true" />
+            <element signature="e#1595#1596#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/model/AuctionDocument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="e#2639#2640#0" expanded="true" />
+            <element signature="e#2667#2668#0" expanded="true" />
+            <element signature="e#2708#2709#0" expanded="true" />
+            <element signature="e#2742#2743#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.7.RELEASE/spring-web-5.1.7.RELEASE.jar!/org/springframework/web/multipart/MultipartFile.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/uploadPhoto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/Auction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="e#1907#1908#0" expanded="true" />
+            <element signature="e#1935#1936#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
+            <element signature="e#2010#2011#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/photos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/getAuction/main.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/addAuction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="94" column="65" selection-start-line="94" selection-start-column="65" selection-end-line="94" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/controller/AuctionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="70" column="23" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/service/AuctionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#button#0;n#form#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/service/PhotoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/controller/PhotoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/auction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="120" column="26" lean-forward="true" selection-start-line="114" selection-start-column="20" selection-end-line="120" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/repository/PhotoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/model/Photo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -3,6 +3,7 @@ package com.carDealer.carDealer.auction.dto;
 import com.carDealer.carDealer.bid.dto.Bid;
 import com.carDealer.carDealer.cars.dto.Car;
 import com.carDealer.carDealer.configuration.dto.Configuration;
+import com.carDealer.carDealer.photos.model.Photo;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class Auction {
     private String productionYear;
 
     private List<Bid> biddingList;
+    private Photo photo;
 
     public Auction() {}
 
@@ -83,5 +85,13 @@ public class Auction {
 
     public void setBiddingList(List<Bid> biddingList) {
         this.biddingList = biddingList;
+    }
+
+    public Photo getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Photo photo) {
+        this.photo = photo;
     }
 }

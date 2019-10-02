@@ -15,3 +15,7 @@
     width: 450px;
     height: 20px;
 }
+#bold {
+    font-style: oblique;
+    color: #ff253a;
+}

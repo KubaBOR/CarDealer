@@ -31,7 +31,7 @@
     <div class="col-lg-4">
 
         <h3>Add new auction</h3>
-        <form action="#" th:action="@{/addAuction}" th:object="${addNewAuction}" th:method="post">
+        <form action="#" enctype="multipart/form-data" th:action="@{/addAuction}" th:object="${addNewAuction}" th:method="post">
             <div class="form-group">
 
                 <div class="input-group input-group-sm mb-3">
@@ -91,6 +91,8 @@
                     </div>
                     <br>
                 </div>
+
+                <input type="file" name="image" accept="image/*"/>
 
                 <div class="form-group">
                     <label for="auctionDescription">Description</label>

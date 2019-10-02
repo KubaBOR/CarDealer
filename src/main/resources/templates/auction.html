@@ -18,6 +18,13 @@
             crossorigin="anonymous"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
+    <style>
+        .bold {
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+
 </head>
 <body>
 <div style="position: absolute;
@@ -38,59 +45,90 @@
                     <span th:text="${car.make + ' ' + car.model}"></span>
                 </div>
             </h2>
+        </div>
+        <div class="col-md-8">
+            <div th:each="auction: ${getAuction}">
 
-            <table class="table">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>Car Details</th>
-                    <th>Price (PLN)</th>
-                    <th>Production Year</th>
-                    <th>Configuration</th>
-                    <th>Milleage</th>
-                </tr>
-
-                </thead>
-                <tbody>
-                <tr th:each="auction: ${getAuction}" style="border: 1px black">
-                    <td></td>
-                    <td>
-                        <div th:each="car : ${auction.car}">
-                            <span th:text="${car.make}"></span>
-                            <span th:text="${car.model}"></span>
+                <img width="100%" alt="car" th:src="*{'data:image/png;base64,'+image}"/>
+                <hr>
+                <div th:each="car : ${auction.car}">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div style="font-weight: bold">Description:</div>
+                            <span th:text="${auction.description}"></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-6 bold">Car:</div>
+                        <div class="col-lg-6">
+                            <span th:text="${car.make + ' ' + car.model}"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 bold">Engine Size:</div>
+                        <div class="col-lg-6">
                             <span th:text="${car.engine}"></span>
-                            <span th:text="${car.horsePower + ' hp'}"></span>
                         </div>
-                    </td>
-                    <td th:text="${auction.price}"></td>
-                    <td th:text="${auction.productionYear}"></td>
-                    <td>
-                        <div th:each="config : ${auction.configurations}">
-                            <span th:text="${config.addon}"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 bold">Horse Power:</div>
+                        <div class="col-lg-6">
+                            <span th:text="${car.horsePower}"></span>
                         </div>
-                    </td>
-                    <td th:text="${auction.milleageKm + ' KM'}"></td>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 bold">Milleage (kilometers):</div>
+                        <div class="col-lg-6">
+                            <span th:text="${auction.milleageKm}"></span>
+                        </div>
+                    </div>
 
-                </tr>
+                    <div class="row">
+                        <div class="col-lg-6 bold">Production Year:</div>
+                        <div class="col-lg-6">
+                            <span th:text="${auction.productionYear}"></span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-6 bold">Configuration:</div>
+                    <div class="col-lg-6">
+                        <div th:each="config: ${auction.configurations}">
+                            <span th:text="${config.addon}"/>
+                        </div>
+                    </div>
+                </div>
 
-                </tbody>
+            </div>
 
-            </table>
 
-            <p th:each="auction: ${getAuction}">
-                <span th:text="${auction.description}"></span>
-            </p>
-
+        </div>
+        <div class="col-md-4">
 
             <div th:text="${message}"></div>
 
 
+            <div class="row">
+                <div class="col-lg-12">
+                    <div th:each="auction: ${getAuction}">
+                        <div th:each="bid, iStat : ${auction.biddingList}">
+                            <h1 th:if="${iStat.last}">
+                                <span class="badge badge-success" th:text="${bid.amount + ' PLN'}"></span>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
             <div th:each="auction : ${getAuction}">
                 <form action="#" th:action="@{'/bidAuction/{id}'(id=${auction.id})}" th:object="${newBid}"
                       method="post">
 
-                    <div class="col-md-4">
-                        <div class="input-group input-group-md mb-3">
+                    <div class="col-md-12">
+                        <div class="input-group input-group-md mb-4">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Outbid by</span>
                             </div>
@@ -111,7 +149,7 @@
 
                 </form>
             </div>
-
+            </div>
             <table class="table table-sm">
                 <thead>
                 <tr>
@@ -127,14 +165,14 @@
                     <tr th:each="bid, iStat : ${auction.biddingList}"
                         th:class="${iStat.last}? 'table-active'"
                         th:style="${iStat.last}? 'font-weight:bold;'">
-                        <!--                        th:style="${iStat.last}? 'font-weight: bold;'"-->
 
-                        <td th:text="${bid.amount} + ' PLN'"></td>
+                        <td th:unless="${iStat.first}" th:text="${bid.amount} + ' PLN'"></td>
+
 
                         <div th:each="user : ${bid.user}">
                             <td th:text="${user.email}"></td>
                         </div>
-                        <td th:if="${iStat.last}">
+                        <td th:unless="${iStat.first}" th:if="${iStat.last}">
                             <span class="badge badge-success">Highest Bid</span>
                         </td>
 

@@ -36,11 +36,9 @@
                 <tr>
                     <th></th>
                     <th>Car Details</th>
-                    <th>Price (PLN)</th>
                     <th>Production Year</th>
-                    <th>Configuration</th>
+                    <th>Price</th>
                     <th>Milleage</th>
-                    <!--                    <th>Description</th>-->
                 </tr>
                 </thead>
                 <tbody>
@@ -70,30 +68,18 @@
                             <span th:text="${car.horsePower + ' hp'}"></span>
                         </div>
                     </td>
-                    <td th:text="${auction.price}"></td>
                     <td th:text="${auction.productionYear}"></td>
                     <td>
-                        <div th:each="config : ${auction.configurations}">
-                            <span th:text="${config.addon}"></span>
+
+                        <div th:each="bid, iStat : ${auction.biddingList}">
+                            <h4 th:if="${iStat.last}">
+                                <span class="badge badge-success" th:text="${bid.amount + ' PLN'}"></span>
+                            </h4>
                         </div>
                     </td>
                     <td th:text="${auction.milleageKm + ' KM'}"></td>
-                    <!--                    <td th:text="${auction.description}"></td>-->
-
-                    <!-- <td th:text="${auction.car.carMake + ' '
-                     + auction.car.model}"/>
-                     <td th:text="${auction.car.engine + ', ' + auction.car.horsePower + ' HP'}"></td>
-                     <td th:text="${auction.car.color}"></td>-->
-
                 </tr>
-                <!-- <td th:each="car : ${allCars}"
-                     th:text="${#request.getCarById/{id}'id=${auction.carId}) }"></td>-->
-                <!--<tr th:each="auction: ${allAuctions}" style="border: 1px black">
-                    <td th:text="${auction.title}"></td>
-                    <td th:text="${auction.price}"></td>
-                    <td th:text="${auction.productionYear}"></td>
-                    <td th:text="${auction.car}"></td>
-                </tr>-->
+
                 </tbody>
             </table>
         </div>
