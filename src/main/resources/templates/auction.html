@@ -102,7 +102,7 @@
                 </div>
 
             </div>
-
+            <hr>
 
         </div>
         <div class="col-md-4">
@@ -123,32 +123,32 @@
             </div>
 
             <div class="row">
-            <div th:each="auction : ${getAuction}">
-                <form action="#" th:action="@{'/bidAuction/{id}'(id=${auction.id})}" th:object="${newBid}"
-                      method="post">
+                <div th:each="auction : ${getAuction}">
+                    <form action="#" th:action="@{'/bidAuction/{id}'(id=${auction.id})}" th:object="${newBid}"
+                          method="post">
 
-                    <div class="col-md-12">
-                        <div class="input-group input-group-md mb-4">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Outbid by</span>
+                        <div class="col-md-12">
+                            <div class="input-group input-group-md mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Outbid by</span>
+                                </div>
+                                <input type="number" class="form-control" th:field="${newBid.amount}"
+                                       th:value="${newBid.amount}" required aria-label="small"
+                                       aria-describedby="inputGroup-sizing-sm"
+                                       min="500"
+                                       max="10000"
+                                       step="500"
+                                       title="Must be a multiple of 500">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success" type="submit">Place Bid</button>
+                                </div>
                             </div>
-                            <input type="number" class="form-control" th:field="${newBid.amount}"
-                                   th:value="${newBid.amount}" required aria-label="small"
-                                   aria-describedby="inputGroup-sizing-sm"
-                                   min="500"
-                                   max="10000"
-                                   step="500"
-                                   title="Must be a multiple of 500">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="submit">Place Bid</button>
-                            </div>
+
+
                         </div>
 
-
-                    </div>
-
-                </form>
-            </div>
+                    </form>
+                </div>
             </div>
             <table class="table table-sm">
                 <thead>
