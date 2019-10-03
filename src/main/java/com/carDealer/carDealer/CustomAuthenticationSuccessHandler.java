@@ -16,8 +16,11 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
         httpServletResponse.setStatus(HttpServletResponse.SC_OK);
         for (GrantedAuthority auth : authentication.getAuthorities()) {
-            if ("ADMIN".equals(auth.getAuthority())) {
+            if ("ROLE_ADMIN".equals(auth.getAuthority())) {
                 httpServletResponse.sendRedirect("/management");
+            }
+            if ("ROLE_USER".equals(auth.getAuthority())) {
+                httpServletResponse.sendRedirect("/allAuctionsPage");
             }
         }
     }

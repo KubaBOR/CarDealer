@@ -57,7 +57,7 @@ public class UserController {
         RedirectView redirectView = new RedirectView();
         redirectView.setUrl("/signup");
 
-        if (userService.isEmailTaken(formData.getEmail())){
+        if (userService.isEmailTaken(formData.getEmail())) {
             FieldError error = new FieldError(
                     "email",
                     "email",
@@ -77,35 +77,6 @@ public class UserController {
         return "redirect:/signup";
 
     }
-
-/*User doesUserExist = userService.getByEmail(user.getEmail());
-        if (doesUserExist != null) {
-          bindingResult.rejectValue("email", "error.user",
-                    "User already exists.");
-           RedirectView redirectView = new RedirectView();
-           redirectView.setUrl("signup");
-           return redirectView;
-
-        } else {
-            userService.addUser(user);
-        }
-        RedirectView redirectView = new RedirectView();
-        redirectView.setUrl("/welcome.html");
-        return redirectView;*//*
-
-    }
-
-    @GetMapping(value = "/dashboard")
-    public RedirectView dashboard(Model model) {
-        RedirectView redirectView = new RedirectView();
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.getByEmail(auth.getName());
-        model.addAttribute("currentUser", user);
-        model.addAttribute("lastName", "Welcome " + user.getLastName());
-        redirectView.setUrl("/management");
-        return redirectView;
-    }
-    */
 
     private void setupModel(Model model) {
         model.addAttribute("newUser", new UserFormData());

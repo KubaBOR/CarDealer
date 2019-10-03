@@ -1,4 +1,4 @@
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <nav class="navbar navbar-light" th:fragment="mainNavbar">
     <ul class="navbar-nav">
@@ -8,7 +8,7 @@
         <li class="nav-item">
             <a class="nav-link" href="/allAuctionsPage">Auctions</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" th:if="${#request.isUserInRole('ADMIN')}">
             <a class="nav-link" href="/management">Management Page</a>
         </li>
     </ul>
@@ -17,7 +17,8 @@
 <div class="loggedUser" th:fragment="loggedUser">
     <form action="#" th:action="@{/logout}">
         <div class="input-group mb-3">
-            <div style="color: #007bff;" class="form-control">Currently logged: [[${#httpServletRequest.remoteUser}]]</div>
+            <div style="color: #007bff;" class="form-control">Currently logged: [[${#httpServletRequest.remoteUser}]]
+            </div>
             <div class="input-group-append">
                 <input type="submit" class="btn btn-outline-primary" value="Sign out">
             </div>

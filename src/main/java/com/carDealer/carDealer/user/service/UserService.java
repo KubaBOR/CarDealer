@@ -44,7 +44,7 @@ public class UserService implements UserDetailsService {
     public String addUser(UserFormData formData) {
 
 
-        RoleDocument userRole = roleRepository.getByRole("ADMIN");
+        RoleDocument userRole = roleRepository.getByRole("ROLE_USER");
 
         UserDocument userToSave = new UserDocument(
                 formData.getFirstName(),
@@ -67,16 +67,6 @@ public class UserService implements UserDetailsService {
         return isTaken.isPresent();
     }
 
-
-/*        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(new HashSet<>(Arrays.asList(userRole)));
-
-        UserDocument userToSave = modelMapper.map(user, UserDocument.class);
-//        userToSave.setRoles(new HashSet<>(Arrays.asList(userRole)));
-
-        return userRepository.save(userToSave).getId();*/
-
-
     public List<User> getAllUsers() {
         return userRepository.findAll().stream()
                 .map(userDocument -> modelMapper.map(userDocument, User.class))
@@ -86,25 +76,6 @@ public class UserService implements UserDetailsService {
     public User getByEmail(String email) {
         UserDocument foundUser = userRepository.getByEmail(email);
         return modelMapper.map(foundUser, User.class);
-    }
-
-    /**
-     * @param user regex checks if username is email address
-     * @return true if regex is email address
-     */
-    private boolean validateUsername(User user) {
-        String username = user.getEmail();
-
-        if (!username.matches("(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"" +
-                "(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\" +
-                "x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(" +
-                "?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|" +
-                "[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-" +
-                "\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])")) {
-            return false;
-        }
-
-        return true;
     }
 
     @Override
@@ -134,13 +105,13 @@ public class UserService implements UserDetailsService {
 
     @PostConstruct
     public void createSampleUser() {
-        if (userRepository.count() < 1) {
+        if (userRepository.getByEmail("admin@admin.pl") == null) {
 
-            RoleDocument userRole = roleRepository.getByRole("ADMIN");
+            RoleDocument userRole = roleRepository.getByRole("ROLE_ADMIN");
 
             UserDocument user = new UserDocument();
-            user.setEmail("test@gmail.com");
-            user.setLastName("Joshua");
+            user.setEmail("admin@admin.pl");
+            user.setLastName("Admin");
             user.setPassword(bCryptPasswordEncoder.encode("pass"));
             user.setRoles(new HashSet<>(Arrays.asList(userRole)));
             userRepository.save(user);

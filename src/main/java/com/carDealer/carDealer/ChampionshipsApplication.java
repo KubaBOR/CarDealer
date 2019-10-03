@@ -19,17 +19,17 @@ public class ChampionshipsApplication {
 	@Bean
 	CommandLineRunner init(RoleRepository roleRepository) {
 		return args -> {
-			RoleDocument adminRole = roleRepository.getByRole("ADMIN");
+			RoleDocument adminRole = roleRepository.getByRole("ROLE_ADMIN");
 			if (adminRole == null) {
 				RoleDocument newAdminRole = new RoleDocument();
-				newAdminRole.setRole("ADMIN");
+				newAdminRole.setRole("ROLE_ADMIN");
 				roleRepository.save(newAdminRole);
 			}
 
-			RoleDocument userRole = roleRepository.getByRole("USER");
+			RoleDocument userRole = roleRepository.getByRole("ROLE_USER");
 			if (userRole == null) {
 				RoleDocument newUserRole = new RoleDocument();
-				newUserRole.setRole("USER");
+				newUserRole.setRole("ROLE_USER");
 				roleRepository.save(newUserRole);
 			}
 		};
