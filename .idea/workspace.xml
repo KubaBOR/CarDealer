@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c145a047-e01a-488a-8d12-43e0285e06ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/controller/AuctionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/controller/AuctionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/BidAuctionFormData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/BidAuctionFormData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/service/AuctionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/service/AuctionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/auction.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/auction.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/allAuctionsPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/allAuctionsPage.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,40 +25,46 @@
     <session id="-1873578111">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="4" />
+          <entry key="html" value="5" />
           <entry key="java" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="4" />
+          <entry key="HTML" value="5" />
           <entry key="JAVA" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="174" />
+          <entry key="html" value="440" />
           <entry key="java" value="800" />
+          <entry key="txt" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="174" />
+          <entry key="HTML" value="440" />
           <entry key="JAVA" value="800" />
+          <entry key="PLAIN_TEXT" value="57" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/controller/AuctionController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="86" column="88" selection-start-line="86" selection-start-column="88" selection-end-line="86" selection-end-column="88" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="228">
+              <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -133,7 +135,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/css/getAuction/main.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/service/PhotoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/controller/PhotoController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/management.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/ChampionshipsApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/CustomAuthenticationSuccessHandler.java" />
@@ -148,6 +149,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/BidAuctionFormData.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/auction.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/controller/AuctionController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html" />
       </list>
     </option>
   </component>
@@ -164,11 +166,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="y" value="-8" />
-    <option name="width" value="976" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="824" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -177,7 +178,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -417,7 +418,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -448,178 +449,6 @@
       <recent name="F:\intelliJ\CarDealer\src\main\resources\templates" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/CarDealer.iml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pom.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/ChampionshipsApplication.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/ResourcesController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/controller/AuctionController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/Auction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/NewAuctionFormData.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/model/AuctionDocument.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/repository/AuctionRepository.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/service/AuctionService.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/cars/repository/CarRepository.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/cars/service/CarService.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/configuration/service/ConfigurationService.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/static/css/main.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/static/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/templates/addAuction.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/templates/allCarsPage.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/templates/allConfigPage.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/templates/auction.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/templates/fragments.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/templates/management.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/com/carDealer/carDealer/auction/service/AuctionServiceTests.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/static/css/main.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/static/index.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/templates/allAuctionsPage.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/templates/allCarsPage.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/templates/allConfigPage.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/templates/fragments.html</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_1_5_RELEASE.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_1_5_RELEASE.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_1_6_RELEASE.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_1_5_RELEASE.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/_config.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/CustomAuthenticationSuccessHandler.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/WebSecurityConfig.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/dto/BidAuctionFormData.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/bid/dto/Bid.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/photos/model/Photo.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/controller/UserController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/dto/User.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/dto/UserFormData.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/model/RoleDocument.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/model/UserDocument.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/repository/RoleRepository.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/repository/UserRepository.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/service/CustomUserDetailsService.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/user/service/UserService.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/static/img/bmw-logo.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/static/img/bmw3front.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/static/img/bmw3front2019.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/static/img/bmw3rear.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/static/img/bmw3rear2019.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/static/img/bmw5.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/static/img/bmwBlack.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/static/img/bmwDashboard.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/static/img/bmwM135i.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/static/img/bmwM5.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/templates/dashboard.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/templates/login.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/templates/signup.html</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -809,6 +638,7 @@
       <workItem from="1570041454078" duration="9444000" />
       <workItem from="1570091922041" duration="4218000" />
       <workItem from="1570128102616" duration="240000" />
+      <workItem from="1570187445122" duration="1461000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1562235218714</created>
@@ -915,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570095182228</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Implemented last bidder cannot outbid himself validation.">
+      <created>1570181818160</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1570181818160</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -951,7 +788,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267166000" />
+    <option name="totallyTimeSpent" value="268741000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -963,10 +800,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="824" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="824" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26680973" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27038628" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -975,12 +812,12 @@
       <window_info id="Repositories" order="6" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32650274" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31420764" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31420764" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32719395" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32936078" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.329235" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Spring" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
@@ -1028,6 +865,9 @@
       </map>
     </option>
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Bug" />
@@ -1044,7 +884,8 @@
     <MESSAGE value="Implemented Unique emails for registration,&#10;implemented success message after registration.&#10;Modernised management page to be more visual." />
     <MESSAGE value="Implemented Photo for auctions.&#10;Modernised Auction Page.&#10;Modernised AllAuctionsPage." />
     <MESSAGE value="Implemented USER and ADMIN role with content restriction for user." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented USER and ADMIN role with content restriction for user." />
+    <MESSAGE value="Implemented last bidder cannot outbid himself validation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented last bidder cannot outbid himself validation." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1063,9 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="80" column="35" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1191,16 +1029,6 @@
             <element signature="e#2667#2668#0" expanded="true" />
             <element signature="e#2708#2709#0" expanded="true" />
             <element signature="e#2742#2743#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#button#0;n#form#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1367,10 +1195,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="148" column="33" selection-start-line="148" selection-start-column="33" selection-end-line="148" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1392,10 +1216,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="28" selection-start-line="28" selection-end-line="29" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1411,11 +1231,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/carDealer/carDealer/auction/controller/AuctionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
+        <state relative-caret-position="1125">
           <caret line="86" column="88" selection-start-line="86" selection-start-column="88" selection-end-line="86" selection-end-column="88" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/allAuctionsPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
         </state>
       </provider>
     </entry>

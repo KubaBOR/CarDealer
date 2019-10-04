@@ -50,14 +50,13 @@
                                     style='font-size:18px'><i class='far fa-trash-alt'></i></button>-->
 
                         <!--                            <input type="submit" class="btn btn-outline-secondary" value="&#128465;">-->
-                        </form>
-                        <br>
-                        <form action="#" th:action="@{/getAuction/{id}(id=${auction.id})}" method="get">
-                            <button class="btn btn-outline-primary" type="submit">
-                                View
-                                <i class="fas fa-link" style="size: 22px"></i>
-                            </button>
-                        </form>
+                        <!--</form>-->
+                        <!--<br>-->
+
+                        <a th:href="@{/getAuction/{id}(id=${auction.id})}">
+                            view <i class="fas fa-link"></i>
+                        </a>
+                        
 
                     </td>
                     <td>
@@ -72,9 +71,9 @@
                     <td>
 
                         <div th:each="bid, iStat : ${auction.biddingList}">
-                            <h4 th:if="${iStat.last}">
-                                <span class="badge badge-success" th:text="${bid.amount + ' PLN'}"></span>
-                            </h4>
+                            <div th:if="${iStat.last}">
+                                <span th:text="${bid.amount + ' PLN'}"></span>
+                            </div>
                         </div>
                     </td>
                     <td th:text="${auction.milleageKm + ' KM'}"></td>
