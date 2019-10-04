@@ -67,19 +67,11 @@ public class AuctionService {
         return modelMapper.map(getAuction, Auction.class);
     }
 
-    public boolean validateBidPrice(int amount) {
-        if (amount < 500) {
-            return false;
-        }
-        if (amount > 10000){
-            return false;
-        }
-        if (amount % 500 != 0) {
-            return false;
-        }
-        else {
-            return true;
-        }
+    public boolean validateBidder(String auctionId, User user) {
+        AuctionDocument getAuction = auctionRepository.getById(auctionId);
+        List <Bid> bidList = getAuction.getBiddingList();
+        Bid lastBid = bidList.get(bidList.size() - 1);
+        return !lastBid.getUser().getEmail().equals(user.getEmail());
     }
 
     public String addNewAuction (NewAuctionFormData formData, MultipartFile image) throws IOException {

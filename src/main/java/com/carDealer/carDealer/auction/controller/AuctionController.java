@@ -15,10 +15,14 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.validation.Valid;
 import java.io.IOException;
 import java.util.Base64;
 import java.util.List;
@@ -54,7 +58,6 @@ public class AuctionController {
     @GetMapping("/addNewAuctionPage")
     public String addNewAuctionPage(Model model) {
         model.addAttribute("displayAuctions", auctionService.getAllAuctions());
-//        model.addAttribute("allCars", carService.getAllCars());
         model.addAttribute("allConfig", configurationService.getAllConfigurations());
         return "addNewAuctionPage";
     }
@@ -72,24 +75,28 @@ public class AuctionController {
     }
 
     @PostMapping("/bidAuction/{id}")
-    public RedirectView bidAuction(@PathVariable String id, @RequestParam int amount, Model model) {
+    public String bidAuction(@PathVariable String id, @ModelAttribute("newBid") @Valid BidAuctionFormData bidAuction,
+                             Model model,
+                             BindingResult bindingResult,
+                             RedirectAttributes attributes) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.getByEmail(auth.getName());
-        model.addAttribute("currentUser", user);
+        bidAuction.setUser(userService.getByEmail(auth.getName()));
+        model.addAttribute("currentUser", bidAuction.getUser());
 
-        /*if (auctionService.validateBidPrice(amount)) {
-            auctionService.bidAuction(id, amount, user);
+        if (auctionService.validateBidder(id, bidAuction.getUser())) {
+            auctionService.bidAuction(id, bidAuction.getAmount(), bidAuction.getUser());
+        } else {
+            FieldError error = new FieldError(
+                    "newBid",
+                    "email",
+                    "ERROR: You cannot outbid yourself."
+            );
+            bindingResult.addError(error);
+            attributes.addFlashAttribute("error", bindingResult.getFieldError().getDefaultMessage());
+            return "redirect:/getAuction/{id}";
         }
-        else {
 
-        }*/
-
-        auctionService.bidAuction(id, amount, user);
-
-
-        RedirectView redirectView = new RedirectView();
-        redirectView.setUrl("/getAuction/{id}");
-        return redirectView;
+        return "redirect:/getAuction/{id}";
     }
 
     @GetMapping("/addAuction")

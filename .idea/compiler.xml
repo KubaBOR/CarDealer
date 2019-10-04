@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="CarDealer" options="-parameters" />
+      <module name="CarDealer" options="" />
     </option>
   </component>
 </project>
